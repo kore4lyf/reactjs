@@ -18,21 +18,21 @@ class App extends Component {
         </header> 
         
         
-        <section>
+        <section class="w-90 mx-auto">
           <h2 class="sub-header"> Currently Reading </h2> 
         
 
         </section>
 
         
-        <section>
+        <section class="w-90 mx-auto">
           <h2 class="sub-header"> Want To Read </h2> 
           
           
         </section>
 
 
-        <section>
+        <section class="w-90 mx-auto">
          <h2 class="sub-header"> Read </h2> 
 
         </section>

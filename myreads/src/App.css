@@ -1,10 +1,29 @@
+#root {
+  margin: 0;
+}
+
+header {
+  border: 1px solid transparent;
+  background: green;
+}
 
 .header {
-  background: limegreen;
+  color: white;
 }
 
 .header,
-.footer,
-.sub-header {
+.footer {
   text-align: center;
+}
+
+.sub-header {
+  color: green;
+}
+
+.w-90 {
+ width: 90%;
+}
+
+.mx-auto {
+  margin: auto;
 }
