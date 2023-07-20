@@ -1,3 +1,10 @@
+@charset "utf-8";
+
+@import font-face{
+  font-family: "playfair";
+  src: url("./fonts/playfair-reg.ttf");
+}
+
 #root {
   margin: 0;
 }
@@ -12,8 +19,16 @@ header {
 }
 
 .header,
+.sub-header {
+  font-family: playfair, serif;
+}
+.header,
 .footer {
   text-align: center;
+}
+
+.main {
+  grid-template-columns: repeat(5, auto);
 }
 
 .sub-header {

@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import {Component} from 'react';
+import CurrentlyReading from './CurrentlyReading';
+import * as API from 'BookAPI';
 import './App.css';
 
 class App extends Component {
@@ -20,21 +22,26 @@ class App extends Component {
         
         <section class="w-90 mx-auto">
           <h2 class="sub-header"> Currently Reading </h2> 
-        
-
+          <div class="currently-reading"> 
+            <CurrentlyReading/>
+          </div>
         </section>
 
         
         <section class="w-90 mx-auto">
           <h2 class="sub-header"> Want To Read </h2> 
+          <div class="want-to-read"> 
           
+          </div>
           
         </section>
 
 
         <section class="w-90 mx-auto">
-         <h2 class="sub-header"> Read </h2> 
-
+          <h2 class="sub-header"> Read </h2> 
+          <div class="want-to-read"> 
+          
+          </div>
         </section>
 
 
