@@ -1,4 +1,4 @@
-function CurrentlyReading({books}) {
+function Read({books}) {
   return(
     <div className="book">
     {books.map( (book) => 
@@ -17,4 +17,4 @@ function CurrentlyReading({books}) {
   );
 }
 
-export default CurrentlyReading;
+export default Read;
