@@ -20,7 +20,7 @@ header {
 
 .header,
 .sub-header {
-  font-family: playfair, serif;
+  font-family: "playfair";
 }
 .header,
 .footer {

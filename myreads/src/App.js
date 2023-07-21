@@ -8,7 +8,9 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      books: {}
+      books: [],
+      error: false,
+      errorMsg: ""
     }
 
   }
@@ -18,12 +20,27 @@ class App extends Component {
       this.setState({
         books
       })
-    })
+    }).catch( err => {
+        console.log(err);
+        this.setState({
+          error: true,
+          errorMsg: "Unable to fetch books"
+        })
+      })
   }
   
   render() {
-    //console.log(BooksAPI.getAll().then(
-    //(data) => JSON.stringify(data))); 
+    const books = this.state.books;
+    
+    const currentlyReading = books.filter(
+      (book) => book.shelf === "currentlyReading");
+
+
+    const wantToRead = books.filter(
+      (book) => book.shelf === "wantToRead");
+    
+    const read = books.filter(
+      (book) => book.shelf === "read");
 
     return (
       <main>
@@ -35,8 +52,8 @@ class App extends Component {
         <section className="w-90 mx-auto">
           <h2 className="sub-header"> Currently Reading </h2> 
           <div className="currently-reading"> 
-            <CurrentlyReading/>
-            {JSON.stringify(this.state.books)}
+            <CurrentlyReading books={currentlyReading}/>
+            {/*JSON.stringify(currentlyReading)*/}
           </div>
         </section>
 
