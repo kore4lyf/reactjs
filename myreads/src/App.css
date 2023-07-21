@@ -1,10 +1,5 @@
 @charset "utf-8";
 
-@import font-face{
-  font-family: "playfair";
-  src: url("./fonts/playfair-reg.ttf");
-}
-
 #root {
   margin: 0;
 }
@@ -20,7 +15,7 @@ header {
 
 .header,
 .sub-header {
-  font-family: "playfair";
+  font-family: "playfair", serif;
 }
 .header,
 .footer {

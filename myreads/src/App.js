@@ -51,17 +51,16 @@ class App extends Component {
         
         <section className="w-90 mx-auto">
           <h2 className="sub-header"> Currently Reading </h2> 
-          <div className="currently-reading"> 
+          <div className="currently-reading book-list"> 
             <CurrentlyReading books={currentlyReading}/>
-            {/*JSON.stringify(currentlyReading)*/}
           </div>
         </section>
 
         
         <section className="w-90 mx-auto">
           <h2 className="sub-header"> Want To Read </h2> 
-          <div className="want-to-read"> 
-          
+          <div className="want-to-read book-list"> 
+            <WantToRead books={wantToRead}/>
           </div>
           
         </section>
@@ -69,8 +68,8 @@ class App extends Component {
 
         <section className="w-90 mx-auto">
           <h2 className="sub-header"> Read </h2> 
-          <div className="want-to-read"> 
-          
+          <div className="read book-list"> 
+            <Read books={read}/>
           </div>
         </section>
 
