@@ -2,11 +2,18 @@
 
 #root {
   margin: 0;
+  --clr-green: #114847;
+}
+
+.book-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 200px);
 }
 
 header {
   border: 1px solid transparent;
-  background: green;
+  background: var(--clr-green);
+  padding-block: 1rem;
 }
 
 .header {
@@ -15,19 +22,32 @@ header {
 
 .header,
 .sub-header {
-  font-family: "playfair", serif;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: .05rem;
 }
-.header,
+
+.sub-header {
+  border-bottom: 2px solid var(--clr-green);
+  margin-block: 2rem;
+  margin-top: 5rem;
+}
+
+.sub-header h2 {
+  border: 2px solid var(--clr-green);
+  border-bottom: 0px;
+  border-top-right-radius: 1rem;
+  border-top-left-radius:  1rem;
+  margin: 0;
+  padding: .5rem;
+  width: fit-content;
+}
+
 .footer {
   text-align: center;
 }
 
-.main {
-  grid-template-columns: repeat(5, auto);
-}
-
 .sub-header {
-  color: green;
+  color: var(--clr-green);
 }
 
 .w-90 {

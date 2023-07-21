@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import {Component} from 'react';
 import CurrentlyReading from './CurrentlyReading';
+import WantToRead from './WantToRead';
+import Read from './Read';
 import * as BooksAPI from './BooksAPI';
 import './App.css';
 
@@ -45,20 +47,24 @@ class App extends Component {
     return (
       <main>
         <header>
-          <h1 className="header"> My Reads </h1>
+          <h1 className="header mx-auto w-90"> My Reads </h1>
         </header> 
         
         
         <section className="w-90 mx-auto">
-          <h2 className="sub-header"> Currently Reading </h2> 
-          <div className="currently-reading book-list"> 
+          <div className="sub-header">
+            <h2> Currently Reading </h2> 
+          </div>
+          <div className="currently-reading"> 
             <CurrentlyReading books={currentlyReading}/>
           </div>
         </section>
 
         
         <section className="w-90 mx-auto">
-          <h2 className="sub-header"> Want To Read </h2> 
+          <div className="sub-header">
+            <h2 className="sub-header"> Want To Read </h2> 
+          </div>
           <div className="want-to-read book-list"> 
             <WantToRead books={wantToRead}/>
           </div>
@@ -67,7 +73,9 @@ class App extends Component {
 
 
         <section className="w-90 mx-auto">
-          <h2 className="sub-header"> Read </h2> 
+          <div className="sub-header">
+            <h2 className="sub-header"> Read </h2> 
+          </div>
           <div className="read book-list"> 
             <Read books={read}/>
           </div>
