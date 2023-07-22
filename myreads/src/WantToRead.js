@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 function WantToRead({books}) {
   const getNumOfAuthors = book => book.authors.length; 
   const getFirstAuthor =  book => book.authors[0];
@@ -26,5 +28,10 @@ function WantToRead({books}) {
     </div>
   );
 }
+
+WantToRead.propTypes = {
+  books: PropTypes.arrayOf(PropTypes.object).isRequired
+}
+
 
 export default WantToRead;

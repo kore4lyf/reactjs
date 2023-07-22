@@ -3,6 +3,7 @@ import {Component} from 'react';
 import CurrentlyReading from './CurrentlyReading';
 import WantToRead from './WantToRead';
 import Read from './Read';
+import Header from './Header'
 import * as BooksAPI from './BooksAPI';
 import './App.css';
 
@@ -46,10 +47,7 @@ class App extends Component {
 
     return (
       <main>
-        <header>
-          <h1 className="header mx-auto w-90"> My Reads </h1>
-        </header> 
-        
+       <Header>My Reads</Header>
         
         <section className="w-90 mx-auto">
           <div className="sub-header">
