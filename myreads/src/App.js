@@ -1,10 +1,8 @@
 import logo from './logo.svg';
 import {Component} from 'react';
-import BookList from './BookList';
-import Header from './Header';
-import AddBook from './AddBook';
 import * as BooksAPI from './BooksAPI';
 import {Routes, Route} from 'react-router-dom';
+import Home from './pages/Home';
 import './App.css';
 
 class App extends Component {
@@ -38,7 +36,6 @@ class App extends Component {
     const currentlyReading = books.filter(
       (book) => book.shelf === "currentlyReading");
 
-
     const wantToRead = books.filter(
       (book) => book.shelf === "wantToRead");
     
@@ -46,46 +43,12 @@ class App extends Component {
       (book) => book.shelf === "read");
 
     return (
-      <main>
-       <Header>My Reads</Header>
-        
-        <section className="w-90 mx-auto">
-          <div className="sub-header">
-            <h2> Currently Reading </h2> 
-          </div>
-          <div className="currently-reading"> 
-            <BookList books={currentlyReading}/>
-          </div>
-        </section>
-
-        
-        <section className="w-90 mx-auto">
-          <div className="sub-header">
-            <h2> Want To Read </h2> 
-          </div>
-          <div className="want-to-read"> 
-            <BookList books={wantToRead}/>
-          </div>
-        </section>
-
-
-        <section className="w-90 mx-auto">
-          <div className="sub-header">
-            <h2 className="sub-header"> Read </h2> 
-          </div>
-          <div className="read"> 
-            <BookList books={read}/>
-          </div>
-        </section>
-
-        
-        <AddBook/>
-
-
-        <footer>
-          <p className="footer"> &copy; 2023 </p> 
-        </footer>
-      </main>
+      <Routes>
+        <Route exact path="/" element={
+          <Home currentlyReading={currentlyReading}
+          wantToRead={wantToRead}
+          read={read} />} />
+      </Routes>
     );
   }
 }
