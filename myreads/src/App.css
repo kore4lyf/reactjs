@@ -8,6 +8,10 @@
   --clr-accent-lte: #d39389;
 }
 
+.add-book{
+
+}
+
 .author {
   border: 1px solid transparent;
   padding: .3rem;
@@ -40,6 +44,11 @@
   margin-block: .5rem;
 }
 
+
+.book .author:hover {
+  color: var(--clr-accent);
+}
+
 .book .title {
   color: var(--clr-green);
   font-size: 1.4rem;
@@ -50,7 +59,7 @@
 
 .book-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 250px);
+  grid-template-columns: repeat(auto-fill, 200px);
   gap: 1.5rem;
 }
 

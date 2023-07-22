@@ -4,6 +4,7 @@ import CurrentlyReading from './CurrentlyReading';
 import WantToRead from './WantToRead';
 import Read from './Read';
 import Header from './Header'
+import AddBook from './AddBook';
 import * as BooksAPI from './BooksAPI';
 import './App.css';
 
@@ -79,6 +80,8 @@ class App extends Component {
           </div>
         </section>
 
+        
+        <AddBook/>
 
         <footer>
           <p className="footer"> &copy; 2023 </p> 
