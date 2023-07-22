@@ -7,7 +7,7 @@ function CurrentlyReading({books}) {
         <div className="details">
           <p className="title"> {book.title}</p>
           <p className="author" title={book.authors.join(" ")}>
-            {book.authors.length > 1 ? book.authors[0] + ", ..." : book.authors[0]} 
+            {book.authors.length > 1 ? <span> {book.authors[0]} <button className="link"> more </button> </span> : book.authors[0]} 
           </p>
         </div>
       </div> 

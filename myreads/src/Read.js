@@ -6,7 +6,7 @@ function Read({books}) {
         <img className="image" src={book.imageLinks.thumbnail} alt={"Cover page for " + book.title}/>
         <div className="details">
           <p className="title"> {book.title}</p>
-          <p className="author" title={book.authors.join(" ")}>
+          <p className="author" title={book.authors.join()}>
             {book.authors.length > 1 ? book.authors[0] + ", ..." : book.authors[0]} 
           </p>
         </div>

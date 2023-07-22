@@ -3,11 +3,47 @@
 #root {
   margin: 0;
   --clr-green: #114847;
+  --clr-gray: darkslategray;
+  --clr-dark: #114847;
+}
+
+.author {
+  border: 1px solid var(--clr-green);
+  border-radius: .2rem;
+  color: white;
+  padding: .3rem;
+  width: fit-content;
+}
+
+.book {
+  width: fit-content;
+  border: 1px solid red;
+}
+
+.book .author {
+  color: var(--clr-gray);
+  font-size: .9rem;
+  font-weight: bold;
+  margin-block: .5rem;
+}
+
+.book .title {
+  color: var(--clr-green);
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-block: .5rem;
 }
 
 .book-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, 200px);
+  gap: 1.5rem;
+}
+
+@media (max-width: 620px) {
+  .book-list {
+    Justify-content: center;
+  }
 }
 
 header {
@@ -26,6 +62,11 @@ header {
   letter-spacing: .05rem;
 }
 
+section:hover .sub-header h2 {
+  background: var(--clr-green);
+  color: white;
+}
+
 .sub-header {
   border-bottom: 2px solid var(--clr-green);
   margin-block: 2rem;
@@ -38,7 +79,7 @@ header {
   border-top-right-radius: 1rem;
   border-top-left-radius:  1rem;
   margin: 0;
-  padding: .5rem;
+  padding: .8rem;
   width: fit-content;
 }
 

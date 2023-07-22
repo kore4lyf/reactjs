@@ -63,9 +63,9 @@ class App extends Component {
         
         <section className="w-90 mx-auto">
           <div className="sub-header">
-            <h2 className="sub-header"> Want To Read </h2> 
+            <h2> Want To Read </h2> 
           </div>
-          <div className="want-to-read book-list"> 
+          <div className="want-to-read"> 
             <WantToRead books={wantToRead}/>
           </div>
           
@@ -76,7 +76,7 @@ class App extends Component {
           <div className="sub-header">
             <h2 className="sub-header"> Read </h2> 
           </div>
-          <div className="read book-list"> 
+          <div className="read"> 
             <Read books={read}/>
           </div>
         </section>
