@@ -1,14 +1,27 @@
 function CurrentlyReading({books}) {
+  const getNumOfAuthors = book => book.authors.length; 
+  const getFirstAuthor =  book => book.authors[0].trim();
+  const getOtherAuthors = book => book.authors.slice(1,);
+  const getImageLink = book => book.imageLinks.thumbnail;
+
   return(
     <div className="book-list">
     {books.map( (book) => 
       <div key={book.id} className="book">
-        <img className="image" src={book.imageLinks.thumbnail} alt={"Cover page for " + book.title}/>
+        <img className="image" src={getImageLink(book)} alt={"Cover page for " + book.title}/>
         <div className="details">
           <p className="title"> {book.title}</p>
-          <p className="author" title={book.authors.join(" ")}>
-            {book.authors.length > 1 ? <span> {book.authors[0]} <button className="link"> more </button> </span> : book.authors[0]} 
-          </p>
+          <ul className="author-list no-list-style">
+            <li className="author"> {getFirstAuthor(book)} </li> 
+              {getNumOfAuthors(book) > 1 && 
+                getOtherAuthors(book).map( 
+                (author) => (
+                <li className="author other-author"> {author} </li>)
+                )}
+
+                {getNumOfAuthors(book) > 1 && 
+              <button className="link show-hide-authors"> more </button> }
+          </ul>
         </div>
       </div> 
     )

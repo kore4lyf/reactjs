@@ -3,27 +3,35 @@
 #root {
   margin: 0;
   --clr-green: #114847;
-  --clr-gray: darkslategray;
+  --clr-gray: gray;
   --clr-dark: #114847;
 }
-
 .author {
-  border: 1px solid var(--clr-green);
-  border-radius: .2rem;
-  color: white;
+  border: 1px solid transparent;
   padding: .3rem;
-  width: fit-content;
+}
+
+.author:hover {
+  border: 1px solid var(--clr-green);
+}
+
+.author-list { 
+  display: flex;
+  flex-wrap: wrap;
+  gap: .3rem;
+  margin: 0px;
 }
 
 .book {
+  border-left: 1px solid lightgray;
+  padding-left: 1rem;
+  position: relative;
   width: fit-content;
-  border: 1px solid red;
 }
 
 .book .author {
   color: var(--clr-gray);
   font-size: .9rem;
-  font-weight: bold;
   margin-block: .5rem;
 }
 
@@ -32,6 +40,7 @@
   font-size: 1.4rem;
   font-weight: bold;
   margin-block: .5rem;
+  margin-bottom: 0px;
 }
 
 .book-list {
@@ -62,6 +71,10 @@ header {
   letter-spacing: .05rem;
 }
 
+.hide {
+  display: none;
+}
+
 section:hover .sub-header h2 {
   background: var(--clr-green);
   color: white;
@@ -81,6 +94,11 @@ section:hover .sub-header h2 {
   margin: 0;
   padding: .8rem;
   width: fit-content;
+}
+
+.no-list-style {
+  padding-left: 0px;
+  list-style-type: none;
 }
 
 .footer {
