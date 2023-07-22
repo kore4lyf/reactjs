@@ -1,7 +1,7 @@
 function CurrentlyReading({books}) {
   const getNumOfAuthors = book => book.authors.length; 
-  const getFirstAuthor =  book => book.authors[0].trim();
-  const getOtherAuthors = book => book.authors.slice(1,);
+  const getAuthor = book => book.authors[0];
+  const getAuthors = book => book.authors;
   const getImageLink = book => book.imageLinks.thumbnail;
 
   return(
@@ -12,15 +12,10 @@ function CurrentlyReading({books}) {
         <div className="details">
           <p className="title"> {book.title}</p>
           <ul className="author-list no-list-style">
-            <li className="author"> {getFirstAuthor(book)} </li> 
-              {getNumOfAuthors(book) > 1 && 
-                getOtherAuthors(book).map( 
-                (author) => (
-                <li className="author other-author"> {author} </li>)
-                )}
-
-                {getNumOfAuthors(book) > 1 && 
-              <button className="link show-hide-authors"> more </button> }
+              {getNumOfAuthors(book) > 1 ?
+                getAuthors(book).map( (author) => (
+                <li className="author"> {author} </li>)) :
+                <li className="author"> {getAuthor(book)} </li>}
           </ul>
         </div>
       </div> 
