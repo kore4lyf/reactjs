@@ -30,7 +30,7 @@ function Read({books}) {
 }
 
 
-WantToRead.propTypes = {
+Read.propTypes = {
   books: PropTypes.arrayOf(PropTypes.object).isRequired
 }
 
