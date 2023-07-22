@@ -1,6 +1,8 @@
+import {Link} from 'react-router-dom';
+
 function AddBook() {
   return(
-    <button className="add-book" > + </button>
+    <Link to="/Search" className="add-book" title="Add Book" > + </Link>
   );
 }
 

@@ -1,11 +1,10 @@
 import logo from './logo.svg';
 import {Component} from 'react';
-import CurrentlyReading from './CurrentlyReading';
-import WantToRead from './WantToRead';
-import Read from './Read';
-import Header from './Header'
+import BookList from './BookList';
+import Header from './Header';
 import AddBook from './AddBook';
 import * as BooksAPI from './BooksAPI';
+import {Routes, Route} from 'react-router-dom';
 import './App.css';
 
 class App extends Component {
@@ -55,7 +54,7 @@ class App extends Component {
             <h2> Currently Reading </h2> 
           </div>
           <div className="currently-reading"> 
-            <CurrentlyReading books={currentlyReading}/>
+            <BookList books={currentlyReading}/>
           </div>
         </section>
 
@@ -65,9 +64,8 @@ class App extends Component {
             <h2> Want To Read </h2> 
           </div>
           <div className="want-to-read"> 
-            <WantToRead books={wantToRead}/>
+            <BookList books={wantToRead}/>
           </div>
-          
         </section>
 
 
@@ -76,12 +74,13 @@ class App extends Component {
             <h2 className="sub-header"> Read </h2> 
           </div>
           <div className="read"> 
-            <Read books={read}/>
+            <BookList books={read}/>
           </div>
         </section>
 
         
         <AddBook/>
+
 
         <footer>
           <p className="footer"> &copy; 2023 </p> 
