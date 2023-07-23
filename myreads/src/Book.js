@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
 
 function Book({book}) {
-  const getNumOfAuthors = book => book.authors.length; 
-  const getAuthor = book => book.authors[0];
+  const getNumOfAuthors = book => {
+    if(book.authors) return book.authors.length;
+  }
   const getAuthors = book => book.authors;
   const getImageLink = book => book.imageLinks.thumbnail;
 
@@ -13,10 +14,9 @@ function Book({book}) {
       <div className="details">
         <p className="title"> {book.title}</p>
         <ul className="author-list no-list-style">
-           {getNumOfAuthors(book) > 1 ?
+           {getNumOfAuthors(book) > 0 && 
             getAuthors(book).map( (author) => (
-            <li key={author} className="author"> {book.shelf} {author} </li>)) :
-            <li className="author"> {book.shelf} {getAuthor(book)} </li>}
+            <li key={author} className="author"> {book.shelf} {author} </li>))} 
         </ul>
       </div>
     </div> 

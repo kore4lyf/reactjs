@@ -26,10 +26,9 @@ function Search({onAction, query, foundBooks, myBooks}) {
       <Header> My Reads </Header>
       <SearchInput onAction={onAction}/>
     {query} 
-    {query.length > 0 && JSON.stringify(organizeBooks(foundBooks, myBooks))}
+    {/*query.length > 0 && JSON.stringify(organizeBooks(foundBooks, myBooks))*/}
       <div className="w-90 mx-auto">
-        { query.length > 0 && "hey"
-       /* <BookList books={organizeBooks(foundBooks, myBooks)}/>*/ }
+        {query.length > 0 && <BookList books={organizeBooks(foundBooks, myBooks)}/> }
       </div>
     </main>
   );
