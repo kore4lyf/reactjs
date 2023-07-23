@@ -15,8 +15,8 @@ function Book({book}) {
         <ul className="author-list no-list-style">
            {getNumOfAuthors(book) > 1 ?
             getAuthors(book).map( (author) => (
-            <li className="author"> {author} </li>)) :
-            <li className="author"> {getAuthor(book)} </li>}
+            <li key={author} className="author"> {book.shelf} {author} </li>)) :
+            <li className="author"> {book.shelf} {getAuthor(book)} </li>}
         </ul>
       </div>
     </div> 
@@ -25,7 +25,7 @@ function Book({book}) {
 
 
 Book.propTypes = {
-  books: PropTypes.arrayOf(PropTypes.object).isRequired
+  books: PropTypes.object.isRequired
 }
 
 export default Book;

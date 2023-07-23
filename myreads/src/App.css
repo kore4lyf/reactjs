@@ -14,12 +14,12 @@
   border-radius: 1rem;
   box-shadow: 3px 3px 5px #00000050;
   color: white;
-  font-size: 3rem;
+  font-size: 2.5rem;
   padding: .4em;
   padding-block: .2em;
   position: fixed;
-  bottom: 25px;
-  right: 25px;
+  bottom: 35px;
+  right: 35px;
   text-decoration: none;
 }
 
@@ -108,9 +108,10 @@ header {
 
 .search .inner-container {
   align-items: center;
+  background: white;
   border-radius: .5rem;
   display: flex;
-  background: white;
+  margin-block: .5rem; 
   width: 60%;
 }
 

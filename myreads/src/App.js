@@ -13,7 +13,8 @@ class App extends Component {
       books: [],
       error: false,
       errorMsg: "",
-      search: ""
+      query: "",
+      foundBooks: []
     }
 
   }
@@ -30,15 +31,47 @@ class App extends Component {
           errorMsg: "Unable to fetch books"
         })
       })
-  }
-  
+  } 
+
+
   handleSearch = (e) => {
+    let text = e.target.value;
     this.setState({
-      search: e.target.value
-    })
+      query: text
+    });
+    this.searchBooks(text);
   }
 
-  render() {
+  searchBooks = (query) => {
+      if (query.length > 0) {
+        BooksAPI.search(query).then( 
+          books => {
+            if(books.error) {
+              this.setState({
+                foundBooks: []
+              })
+            } else {
+              this.setState({
+              foundBooks: books
+            })
+            }
+          }
+        ).catch( 
+            err => {
+              console.log(err);
+              this.setsate({
+                error: true, 
+                errorMsg: "Unable to fetch books"
+              });
+            });
+      } else {
+       this.setState({
+        foundBooks: []
+       });
+      }
+    }
+
+  render() { 
     const books = this.state.books;
     
     const currentlyReading = books.filter(
@@ -58,7 +91,10 @@ class App extends Component {
           read={read} />} />
 
         <Route path="/search" element={
-          <Search onAction={this.handleSearch}/>} />
+          <Search onAction={this.handleSearch} 
+          query={this.state.query}
+          foundBooks={this.state.foundBooks}
+          myBooks={this.state.books} />} />
       </Routes>
     );
   }
