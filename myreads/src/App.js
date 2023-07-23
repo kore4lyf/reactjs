@@ -3,6 +3,7 @@ import {Component} from 'react';
 import * as BooksAPI from './BooksAPI';
 import {Routes, Route} from 'react-router-dom';
 import Home from './pages/Home';
+import Search from './pages/Search';
 import './App.css';
 
 class App extends Component {
@@ -11,7 +12,8 @@ class App extends Component {
     this.state = {
       books: [],
       error: false,
-      errorMsg: ""
+      errorMsg: "",
+      search: ""
     }
 
   }
@@ -30,6 +32,12 @@ class App extends Component {
       })
   }
   
+  handleSearch = (e) => {
+    this.setState({
+      search: e.target.value
+    })
+  }
+
   render() {
     const books = this.state.books;
     
@@ -48,6 +56,9 @@ class App extends Component {
           <Home currentlyReading={currentlyReading}
           wantToRead={wantToRead}
           read={read} />} />
+
+        <Route path="/search" element={
+          <Search onAction={this.handleSearch}/>} />
       </Routes>
     );
   }

@@ -20,6 +20,7 @@
   position: fixed;
   bottom: 25px;
   right: 25px;
+  text-decoration: none;
 }
 
 .author {
@@ -70,7 +71,7 @@
 .book-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, 200px);
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 header {
@@ -91,6 +92,49 @@ header {
 
 .hide {
   display: none;
+}
+
+.search .icon {
+  padding: .5rem;
+  background: var(--clr-green);
+  border: 0px;
+  border-top-right-radius: inherit;
+  border-bottom-right-radius: inherit;
+}
+
+.search .outer-container {
+  padding: .5rem;
+}
+
+.search .inner-container {
+  align-items: center;
+  border-radius: .5rem;
+  display: flex;
+  background: white;
+  width: 60%;
+}
+
+.search .icon svg {
+  color: white;
+  width: 20px;
+}
+
+.search {
+  background: lightgray;
+
+}
+
+.search input {
+ border: 0px;
+ font-size: 1.2rem;
+ line-height: 1.5rem;
+ margin-inline: .2rem;
+ width: 100%;
+}
+
+
+.search input:focus {
+  outline: 0px;
 }
 
 section:hover .sub-header h2 {

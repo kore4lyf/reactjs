@@ -2,7 +2,7 @@ import {Link} from 'react-router-dom';
 
 function AddBook() {
   return(
-    <Link to="/Search" className="add-book" 
+    <Link to="/search" className="add-book" 
     title="Add Book" > + </Link>
   );
 }
