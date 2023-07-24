@@ -5,7 +5,18 @@ function Book({book}) {
     if(book.authors) return book.authors.length;
   }
   const getAuthors = book => book.authors;
-  const getImageLink = book => book.imageLinks.thumbnail;
+  const getImageLink = book => {
+    if(book.imageLinks) {
+      if(book.imageLinks.thumbnail) {
+        return book.imageLinks.thumbnail;
+      } else if(book.imageLinks.smallThumbnail) {
+        return book.imageLinks.smallThumbnail;
+      }
+    } else {
+      return "";
+    }
+
+  }
 
   return(
     <div className="book">
