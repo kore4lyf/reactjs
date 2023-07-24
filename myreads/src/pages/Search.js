@@ -26,7 +26,7 @@ function Search({onAction, query, foundBooks, myBooks}) {
       <Header> My Reads </Header>
       <SearchInput onAction={onAction}/>
       <div className="w-90 mx-auto">
-        {query.length > 0 && <BookList books={organizeBooks(foundBooks, myBooks)}/> }
+        {foundBooks.length > 0 && <BookList books={organizeBooks(foundBooks, myBooks)}/> }
       </div>
     </main>
   );

@@ -4,7 +4,11 @@ function Book({book}) {
   const getNumOfAuthors = book => {
     if(book.authors) return book.authors.length;
   }
-  const getAuthors = book => book.authors;
+
+  const getAuthors = book => { 
+    if (book.authors) return book.authors;
+  }
+
   const getImageLink = book => {
     if(book.imageLinks) {
       if(book.imageLinks.thumbnail) {
@@ -12,16 +16,16 @@ function Book({book}) {
       } else if(book.imageLinks.smallThumbnail) {
         return book.imageLinks.smallThumbnail;
       }
-    } else {
-      return "";
     }
 
   }
 
   return(
     <div className="book">
+    {book.imageLinks !== undefined ?
       <img className="image" src={getImageLink(book)} 
-        alt={"Cover page for " + book.title}/>
+        alt={"Cover page for " + book.title}/> :
+      <div className="missing-image"> <p>No Image </p> </div> }
       <div className="details">
         <p className="title"> {book.title}</p>
         <ul className="author-list no-list-style">

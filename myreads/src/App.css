@@ -68,6 +68,10 @@
   margin-bottom: 0px;
 }
 
+.book img {
+  width: 100%;
+}
+
 .book-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, 150px);
@@ -92,6 +96,15 @@ header {
 
 .hide {
   display: none;
+}
+
+.missing-image {
+  align-items: center;
+  border: 1px solid gray;
+  display: flex;
+  justify-content: center;
+  height: 200px;
+  width: 120px;
 }
 
 .search .icon {
