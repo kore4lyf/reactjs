@@ -1,6 +1,7 @@
 import Header from '../Header';
 import SearchInput from '../SearchInput';
 import BookList from '../BookList';
+import PropTypes from 'pro-types';
 
 function Search({onAction, query, foundBooks, myBooks}) {
   
@@ -33,6 +34,11 @@ function Search({onAction, query, foundBooks, myBooks}) {
 
 }
 
-
+Search.propTypes = {
+  onAction: PropTypes.func.isRequired,
+  query: PropTypes.string.isRequired,
+  foundBooks: PropTypes.arrayOf(PropTypes.objec).isRequired,
+  myBooks: PropTypes.arrayOf(PropTypes.objec).isRequired
+}
 
 export default Search;

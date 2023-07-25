@@ -46,7 +46,7 @@ function Book({book}) {
         <ul className="author-list no-list-style">
            {getNumOfAuthors(book) > 0 && 
             getAuthors(book).map( (author) => (
-            <li key={author} className="author"> {book.shelf} {author} </li>))} 
+            <li key={author} className="author"> {author} </li>))} 
         </ul>
       </div>
     </div> 
