@@ -144,11 +144,19 @@ main .header,
 }
 
 .search .icon {
-  padding: .5rem;
   background: var(--clr-green);
-  border: 0px;
+  border: 1px solid transparent;
   border-top-right-radius: inherit;
   border-bottom-right-radius: inherit;
+  color: white;
+  font-size: 1.3rem;
+  padding: .5em;
+}
+
+.search:hover .icon {
+  background: white;
+  border: 1px solid var(--clr-green);
+  color: var(--clr-green);
 }
 
 .search .outer-container {
@@ -162,11 +170,6 @@ main .header,
   display: flex;
   margin-block: .5rem; 
   width: 60%;
-}
-
-.search .icon svg {
-  color: white;
-  width: 20px;
 }
 
 .search {
