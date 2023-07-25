@@ -143,6 +143,35 @@ main .header,
   width: 100%;
 }
 
+.moveto-container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.move-to {
+  background: white;
+  border: 1px solid gray;
+  border-radius: .5rem;
+  color: gray;
+  font-size: 1rem;
+  text-align: center;
+  width: 90%
+}
+
+.move-to .option {
+  border-bottom: 1px solid gray;
+  padding-block: .5rem;
+  padding-inline: .4rem;
+}
+
+.move-to .option:first-of-type {
+
+}
+
 .search .icon {
   background: var(--clr-green);
   border: 1px solid transparent;
@@ -160,7 +189,8 @@ main .header,
 }
 
 .search .outer-container {
-  padding: .5rem;
+  padding-block: .5rem;
+  padding-inline: 0rem;
 }
 
 .search .inner-container {

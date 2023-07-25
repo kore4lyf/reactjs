@@ -34,8 +34,10 @@ function Book({book}) {
 
         <div className="moveto-container"> 
           <ul className="no-list-style move-to">
-            <li className="moveto-header"></li>
-            <li className="option"></li>
+            <li className="option active">None</li>
+            <li className="option">Reading</li>
+            <li className="option">Wish</li>
+            <li className="option">Read</li>
           </ul>
         </div>
       </div>
