@@ -8,6 +8,10 @@
   --clr-accent-lte: #d39389;
 }
 
+#root * {
+ box-sizing: border-box;
+}
+
 .add-book{
   background: var(--clr-accent);
   border: 0px;
@@ -78,17 +82,34 @@
   gap: 1rem;
 }
 
+
+.edit-container { 
+  align-items: center;
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  position: absolute;
+  z-index: 1;
+}
+
+.edit {
+  color: white;
+  background: transparent;
+  border: 0px;
+  cursor: pointer;
+}
+
 header {
   border: 1px solid transparent;
   background: var(--clr-green);
   padding-block: 1rem;
 }
 
-.header {
+main .header {
   color: white;
 }
 
-.header,
+main .header,
 .sub-header {
   font-family: 'Playfair Display', serif;
   letter-spacing: .05rem;
@@ -98,13 +119,28 @@ header {
   display: none;
 }
 
+.image-container { 
+  position: relative;
+}
+
+.image-container img {
+ width: 100%;
+}
+
+.image-container:before {
+  content: "";
+  background: linear-gradient(black, transparent);
+  position: absolute;
+  inset: 0;
+}
+
 .missing-image {
   align-items: center;
-  border: 1px solid gray;
+  border: 1px solid lightgray;
   display: flex;
   justify-content: center;
   height: 200px;
-  width: 120px;
+  width: 100%;
 }
 
 .search .icon {

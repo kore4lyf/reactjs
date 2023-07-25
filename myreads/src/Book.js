@@ -22,10 +22,23 @@ function Book({book}) {
 
   return(
     <div className="book">
-    {book.imageLinks !== undefined ?
-      <img className="image" src={getImageLink(book)} 
-        alt={"Cover page for " + book.title}/> :
-      <div className="missing-image"> <p>No Image </p> </div> }
+
+      <div className="image-container">
+        {book.imageLinks !== undefined ?
+          <img src={getImageLink(book)} 
+          alt={"Cover page for " + book.title}/> :
+          <div className="missing-image"> <p>No Image </p> </div> }
+         <div className="edit-container">
+          <button className="edit"> <span className="fas fa-edit"> </span> </button>
+         </div>
+
+        <div className="moveto-container"> 
+          <ul className="no-list-style move-to">
+            <li className="moveto-header"></li>
+            <li className="option"></li>
+          </ul>
+        </div>
+      </div>
       <div className="details">
         <p className="title"> {book.title}</p>
         <ul className="author-list no-list-style">
