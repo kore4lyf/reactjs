@@ -25,6 +25,7 @@
   bottom: 35px;
   right: 35px;
   text-decoration: none;
+  z-index: 100;
 }
 
 .author {
@@ -154,22 +155,41 @@ main .header,
 
 .move-to {
   background: white;
-  border: 1px solid gray;
   border-radius: .5rem;
   color: gray;
-  font-size: 1rem;
+  font-size: .9rem;
+  font-weight: bold;
   text-align: center;
   width: 90%
 }
 
 .move-to .option {
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid lightgray;
   padding-block: .5rem;
   padding-inline: .4rem;
 }
 
 .move-to .option:first-of-type {
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+}
 
+.move-to .option:last-of-type {
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+}
+
+.move-to .option.active {
+  background: var(--clr-green);
+  color: white;
+}
+
+.move-to .option.active:hover {
+    background: var(--clr-green);
+}
+
+.move-to .option:hover {
+  background: #00000010;
 }
 
 .search .icon {
