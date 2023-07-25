@@ -34,10 +34,10 @@ function Book({book}) {
 
         <div className="moveto-container"> 
           <ul className="no-list-style move-to">
-            <li className="option active">None</li>
-            <li className="option">Reading</li>
-            <li className="option">Wish</li>
-            <li className="option">Read</li>
+            <li className={book.shelf === undefined ? "option active" : "option"}>None</li>
+            <li className={book.shelf === "currentlyReading" ? "option active" : "option"}>Reading</li>
+            <li className={book.shelf === "wantToRead" ? "option active" : "option"}>Wish</li>
+            <li className={book.shelf === "read" ? "option active" : "option"}>Read</li>
           </ul>
         </div>
       </div>
