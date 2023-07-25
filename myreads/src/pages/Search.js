@@ -1,7 +1,7 @@
 import Header from '../Header';
 import SearchInput from '../SearchInput';
 import BookList from '../BookList';
-import PropTypes from 'pro-types';
+import PropTypes from 'prop-types';
 
 function Search({onAction, query, foundBooks, myBooks}) {
   
