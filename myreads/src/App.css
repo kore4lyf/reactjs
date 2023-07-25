@@ -202,7 +202,7 @@ main .header,
   padding: .5em;
 }
 
-.search:hover .icon {
+.search .icon:hover {
   background: white;
   border: 1px solid var(--clr-green);
   color: var(--clr-green);
