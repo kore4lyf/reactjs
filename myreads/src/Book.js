@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-function Book({book}) {
+function Book({book, moveTo}) {
   const getNumOfAuthors = book => {
     if(book.authors) return book.authors.length;
   }
@@ -17,7 +17,6 @@ function Book({book}) {
         return book.imageLinks.smallThumbnail;
       }
     }
-
   }
 
   return(
@@ -34,10 +33,10 @@ function Book({book}) {
 
         <div className="moveto-container"> 
           <ul className="no-list-style move-to">
-            <li className={book.shelf === undefined ? "option active" : "option"}>None</li>
-            <li className={book.shelf === "currentlyReading" ? "option active" : "option"}>Reading</li>
-            <li className={book.shelf === "wantToRead" ? "option active" : "option"}>Wish</li>
-            <li className={book.shelf === "read" ? "option active" : "option"}>Read</li>
+            <li onClick={() => moveTo(book, "")} className={book.shelf === undefined ? "option active" : "option"}>None</li>
+            <li onClick={() => moveTo(book, "currentlyReading")} className={book.shelf === "currentlyReading" ? "option active" : "option"}>Reading</li>
+            <li onClick={() => moveTo(book, "wantToRead")} className={book.shelf === "wantToRead" ? "option active" : "option"}>Wish</li>
+            <li onClick={() => moveTo(book, "read")} className={book.shelf === "read" ? "option active" : "option"}>Read</li>
           </ul>
         </div>
       </div>
@@ -55,7 +54,8 @@ function Book({book}) {
 
 
 Book.propTypes = {
-  books: PropTypes.object.isRequired
+  books: PropTypes.object.isRequired,
+  moveTo: PropTypes.func.isRequired
 }
 
 export default Book;

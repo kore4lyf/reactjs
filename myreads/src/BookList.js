@@ -1,10 +1,10 @@
 import Book from './Book';
 
-function BookList({books}) {
+function BookList({books, moveTo}) {
   return(
     <div className="book-list">
       {books.map( (book) => 
-        <Book key={book.id} book={book}/>)}
+        <Book key={book.id} book={book} moveTo={moveTo}/>)}
     </div>
   );
 }

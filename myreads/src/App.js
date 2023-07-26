@@ -46,7 +46,20 @@ class App extends Component {
   moveTo = (book, shelf) => {
     BooksAPI.update(book, shelf).then( 
       () => {
-
+        if(book.shelf !== shelf) {
+          if(shelf === "") {
+            this.setState((prevState) => {
+              books: prevState.filter(
+                (aBook) => aBook.id !== book.id)
+            });
+          } else {
+            book.shelf = shelf;
+            this.setState((prevState) => {
+              books: prevState.filter(
+                (aBook) => aBook.id !== book.id).concat(book)
+            });
+          }
+        }
       }
     ).catch(  err => {
         console.log(err);
@@ -55,22 +68,7 @@ class App extends Component {
           errorMsg: "Unable to update books"
         })
       }
-    )
-
-    if(book.shelf !== shelf) {
-      if(shelf === "") {
-        this.setState((prevState) => {
-          books: prevState.filter(
-            (aBook) => aBook.id !== book.id)
-        });
-      } else {
-        book.shelf = shelf;
-        this.setState((prevState) => {
-          books: prevState.filter(
-            (aBook) => aBook.id !== book.id).concat(book)
-        });
-      }
-  }
+    )}
 
 
   searchBooks = (query) => {

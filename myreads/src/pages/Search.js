@@ -3,7 +3,7 @@ import SearchInput from '../SearchInput';
 import BookList from '../BookList';
 import PropTypes from 'prop-types';
 
-function Search({onAction, query, foundBooks, myBooks}) {
+function Search({onAction, query, foundBooks, myBooks, moveTo}) {
   
   const  organizeBooks = (foundBooks, myBooks) => {
     let books = [];
@@ -27,7 +27,7 @@ function Search({onAction, query, foundBooks, myBooks}) {
       <Header> My Reads </Header>
       <SearchInput onAction={onAction}/>
       <div className="w-90 mx-auto">
-        {foundBooks.length > 0 && <BookList books={organizeBooks(foundBooks, myBooks)}/> }
+        {foundBooks.length > 0 && <BookList books={organizeBooks(foundBooks, myBooks)} moveTo={moveTo}/> }
       </div>
     </main>
   );
@@ -38,7 +38,8 @@ Search.propTypes = {
   onAction: PropTypes.func.isRequired,
   query: PropTypes.string.isRequired,
   foundBooks: PropTypes.arrayOf(PropTypes.objec).isRequired,
-  myBooks: PropTypes.arrayOf(PropTypes.objec).isRequired
+  myBooks: PropTypes.arrayOf(PropTypes.objec).isRequired,
+  moveTo: PropTypes.func.isRequired
 }
 
 export default Search;
