@@ -42,6 +42,37 @@ class App extends Component {
     this.searchBooks(text);
   }
 
+
+  moveTo = (book, shelf) => {
+    BooksAPI.update(book, shelf).then( 
+      () => {
+
+      }
+    ).catch(  err => {
+        console.log(err);
+        this.setState({
+          error: true,
+          errorMsg: "Unable to update books"
+        })
+      }
+    )
+
+    if(book.shelf !== shelf) {
+      if(shelf === "") {
+        this.setState((prevState) => {
+          books: prevState.filter(
+            (aBook) => aBook.id !== book.id)
+        });
+      } else {
+        book.shelf = shelf;
+        this.setState((prevState) => {
+          books: prevState.filter(
+            (aBook) => aBook.id !== book.id).concat(book)
+        });
+      }
+  }
+
+
   searchBooks = (query) => {
       if (query.length > 0) {
         BooksAPI.search(query).then( 
@@ -88,13 +119,13 @@ class App extends Component {
         <Route exact path="/" element={
           <Home currentlyReading={currentlyReading}
           wantToRead={wantToRead}
-          read={read} />} />
+          read={read} moveTo={this.moveTo} />} />
 
         <Route path="/search" element={
           <Search onAction={this.handleSearch} 
           query={this.state.query}
           foundBooks={this.state.foundBooks}
-          myBooks={this.state.books} />} />
+          myBooks={this.state.books} moveTo={this.moveTo} />} />
       </Routes>
     );
   }

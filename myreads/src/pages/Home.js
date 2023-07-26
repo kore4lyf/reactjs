@@ -2,7 +2,7 @@ import BookList from '../BookList';
 import Header from '../Header';
 import AddBook from '../AddBook';
 
-function Home({currentlyReading, wantToRead, read}) {
+function Home({currentlyReading, wantToRead, read, moveTo}) {
  return(
   <main>
    <Header>My Reads</Header>
