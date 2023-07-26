@@ -67,10 +67,12 @@
 
 .book .title {
   color: var(--clr-green);
-  font-size: 1.2rem;
+  font-size: 1.0rem;
   font-weight: bold;
   margin-block: .5rem;
   margin-bottom: 0px;
+  white-space: wrap;
+  word-break: break-word;
 }
 
 .book img {

@@ -44,24 +44,24 @@ class App extends Component {
 
 
   moveTo = (book, shelf) => {
-    BooksAPI.update(book, shelf).then( 
-      () => {
+    BooksAPI.update(book, shelf).then(() => { 
         if(book.shelf !== shelf) {
           if(shelf === "") {
-            this.setState((prevState) => {
-              books: prevState.filter(
+            this.setState((prevState) => ({
+              books: prevState.books.filter(
                 (aBook) => aBook.id !== book.id)
-            });
+              })
+            );
           } else {
             book.shelf = shelf;
-            this.setState((prevState) => {
-              books: prevState.filter(
+            this.setState((prevState) => ({
+              books: prevState.books.filter(
                 (aBook) => aBook.id !== book.id).concat(book)
-            });
+              })
+            );
           }
         }
-      }
-    ).catch(  err => {
+  }).catch(  err => {
         console.log(err);
         this.setState({
           error: true,

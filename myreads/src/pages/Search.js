@@ -37,8 +37,8 @@ function Search({onAction, query, foundBooks, myBooks, moveTo}) {
 Search.propTypes = {
   onAction: PropTypes.func.isRequired,
   query: PropTypes.string.isRequired,
-  foundBooks: PropTypes.arrayOf(PropTypes.objec).isRequired,
-  myBooks: PropTypes.arrayOf(PropTypes.objec).isRequired,
+  foundBooks: PropTypes.arrayOf(PropTypes.object).isRequired,
+  myBooks: PropTypes.arrayOf(PropTypes.object).isRequired,
   moveTo: PropTypes.func.isRequired
 }
 
