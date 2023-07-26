@@ -177,6 +177,7 @@ main .header,
 .move-to .option:last-of-type {
   border-bottom-left-radius: inherit;
   border-bottom-right-radius: inherit;
+  border-bottom: 0px;
 }
 
 .move-to .option.active {
