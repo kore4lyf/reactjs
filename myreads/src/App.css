@@ -88,7 +88,7 @@
 
 .edit-container { 
   align-items: center;
-  display: flex;
+  display: none;
   inset: 0;
   justify-content: center;
   position: absolute;
@@ -118,14 +118,14 @@ main .header,
   letter-spacing: .05rem;
 }
 
-.hide {
-  display: none;
-}
 
 .image-container { 
   position: relative;
 }
 
+.image-container:hover .edit-container {
+  display: flex;
+}
 .image-container img {
  width: 100%;
 }
@@ -133,8 +133,14 @@ main .header,
 .image-container:before {
   content: "";
   background: linear-gradient(black, transparent);
+  display: none;
   position: absolute;
   inset: 0;
+}
+
+
+.image-container:hover:before {
+  display: block;
 }
 
 .missing-image {
@@ -275,6 +281,11 @@ section:hover .sub-header h2 {
 
 .sub-header {
   color: var(--clr-green);
+}
+
+
+.hide {
+ display: none;
 }
 
 .w-90 {
