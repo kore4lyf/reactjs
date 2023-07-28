@@ -2,7 +2,7 @@ import BookList from '../BookList';
 import Header from '../Header';
 import AddBook from '../AddBook';
 
-function Home({currentlyReading, wantToRead, read, moveTo}) {
+function Home({currentlyReading, wantToRead, read, functions}) {
  return(
   <main>
    <Header>My Reads</Header>
@@ -12,7 +12,7 @@ function Home({currentlyReading, wantToRead, read, moveTo}) {
         <h2> Currently Reading </h2> 
       </div>
       <div className="currently-reading"> 
-        <BookList books={currentlyReading} moveTo={moveTo}/>
+        <BookList books={currentlyReading} functions={functions}/>
       </div>
     </section>
 
@@ -22,7 +22,7 @@ function Home({currentlyReading, wantToRead, read, moveTo}) {
         <h2> Want To Read </h2> 
       </div>
       <div className="want-to-read"> 
-        <BookList books={wantToRead} moveTo={moveTo}/>
+        <BookList books={wantToRead} functions={functions}/>
       </div>
     </section>
 
@@ -32,7 +32,7 @@ function Home({currentlyReading, wantToRead, read, moveTo}) {
         <h2 className="sub-header"> Read </h2> 
       </div>
       <div className="read"> 
-        <BookList books={read} moveTo={moveTo}/>
+        <BookList books={read} functions={functions}/>
       </div>
     </section>
 

@@ -16,7 +16,6 @@ class App extends Component {
       query: "",
       foundBooks: []
     }
-
   }
   
   componentDidMount() {
@@ -42,8 +41,19 @@ class App extends Component {
     this.searchBooks(text);
   }
 
+  /* showMovetoOptions = (e) => {
+    const movetoOptions = 
+      e.target.closest(".image-container").query(".moveto");
+    console.log(movetoOptions);
+  } */
 
-  moveTo = (book, shelf) => {
+  /* hideMovetoOptions = (e) => {
+    const movetoOptions = 
+      e.target.closest(".images-cobtainer").query("moveto");
+  } */
+
+
+  moveTo = ( book, shelf) => {
     BooksAPI.update(book, shelf).then(() => { 
         if(book.shelf !== shelf) {
           if(shelf === "") {
@@ -61,6 +71,8 @@ class App extends Component {
             );
           }
         }
+
+      //this.hideMovetoOptions(e)
   }).catch(  err => {
         console.log(err);
         this.setState({
@@ -112,18 +124,24 @@ class App extends Component {
     const read = books.filter(
       (book) => book.shelf === "read");
 
+    const functions = {
+      onSearch: this.handleSearch,
+      moveTo: this.moveTo,
+      showMovetoOptions: this.showMovetoOptions,
+    }
+
     return (
       <Routes>
         <Route exact path="/" element={
           <Home currentlyReading={currentlyReading}
           wantToRead={wantToRead}
-          read={read} moveTo={this.moveTo} />} />
+          read={read} functions={functions} />} />
 
         <Route path="/search" element={
           <Search onAction={this.handleSearch} 
           query={this.state.query}
           foundBooks={this.state.foundBooks}
-          myBooks={this.state.books} moveTo={this.moveTo} />} />
+          myBooks={this.state.books} functions={functions}/>} />
       </Routes>
     );
   }
