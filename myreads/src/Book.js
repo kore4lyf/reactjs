@@ -31,7 +31,7 @@ function Book({book, functions}) {
           <button onClick={() => ""} className="edit"> <span className="fas fa-edit"> </span> </button>
          </div>
 
-        <div className="moveto-container"> 
+        <div onClick={(e) => e.target.parentNode.classList.add('hide') } className="moveto-container"> 
           <ul className="no-list-style move-to">
             <li onClick={() => functions.moveTo(book, "")} className={book.shelf === undefined ? "option active" : "option"}>None</li>
             <li onClick={() => functions.moveTo(book, "currentlyReading")} className={book.shelf === "currentlyReading" ? "option active" : "option"}>Reading</li>
