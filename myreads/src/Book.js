@@ -30,7 +30,7 @@ class Book extends Component {
   const { book, functions } = this.props
   return(
     <div className="book" 
-        onMouseLeave={() => this.movetoContainer.classList.add('hide')}>
+        onMouseOut={() => this.movetoContainer.classList.add('hide')}>
 
       <div className="image-container">
         {book.imageLinks !== undefined ?
