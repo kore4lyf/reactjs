@@ -1,10 +1,10 @@
 import React from 'react'
-import PropTypes from 'react'
+import PropTypes from 'prop-types'
 
-const todo-form = () => {
+const TodoForm = () => {
   return (
     <div>todo-form</div>
   )
 }
 
-export default todo-form
+export default TodoForm
