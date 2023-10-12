@@ -1,12 +1,19 @@
-import '../App.scss'
-import Todo from './Todo.jsx'
+import React from 'react'
+import TodoForm from './TodoForm.jsx'
+import GoalForm from './GoalForm.jsx'
+
+
 
 function App() {
 
   return (
-    <div>
-      <Todo> Hey </Todo>
-    </div>
+    <main>
+      <h1> App </h1>
+      <TodoForm /> 
+
+
+      
+    </main>
   )
 }
 
