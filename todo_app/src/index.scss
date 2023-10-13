@@ -11,8 +11,11 @@
 
 
 body {
-  margin: 0px; 
+  margin: 0px;
+  padding-inline: 20px;
   background: white;
 }
 
-
+h1, h2 {
+  color: blue
+}

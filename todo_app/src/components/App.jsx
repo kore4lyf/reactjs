@@ -8,11 +8,18 @@ function App() {
 
   return (
     <main>
-      <h1> App </h1>
       <TodoForm /> 
+      <div>
 
+      </div>
 
-      
+      <br/>
+
+      <GoalForm /> 
+      <div>
+
+      </div>
+
     </main>
   )
 }
