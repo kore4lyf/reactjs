@@ -1,6 +1,6 @@
 {
   "homepage": "https://kore4lyf.github.io/reactjs/myreads",
-  "name": "my-app",
+  "name": "myreads",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
