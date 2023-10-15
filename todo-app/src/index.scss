@@ -1,0 +1,49 @@
+/* Global Style */
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+
+body {
+  margin: 0px;
+  padding-inline: 20px;
+  background: white;
+}
+
+h1, h2 {
+  color: blue
+}
+
+
+
+/*  Components */
+
+.tab {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  list-style-type: none;
+  
+  li {
+    display: grid;
+    place-content: center;
+  }
+
+  a {
+    border-bottom: 4px solid transparent; 
+    padding-inline: 1rem;
+  } 
+
+  a.active {
+    border-bottom: 4px solid blue; 
+  }
+
+}
