@@ -1,7 +1,9 @@
 /* Global Style */
 $light-green: rgb(182, 244, 150);
 $dark-green: rgb(51, 139, 147);
-$gradient-bg: linear-gradient(to bottom, $dark-green, $light-green);
+$dark-slate: hsl(222, 47.4%, 11.2%);
+$gradient-bg: linear-gradient(to right, $dark-green, $light-green);
+$bg-overlay: linear-gradient(to bottom, $dark-slate, transparent);
 
 
 :root {
@@ -21,10 +23,18 @@ body {
   background: $gradient-bg;
   min-height: 100vh;
   color: white;
+
+  &::before{
+    content: "";
+    background: $bg-overlay;
+    position: absolute;
+    inset: 0;
+  }
 }
 
 main {
   width: 100%;
+  position: relative;
 }
 
 a {
@@ -45,13 +55,15 @@ a {
   display: flex;
   justify-content: space-around;
   list-style-type: none;
-  // background: rgba(255, 255, 255, .1);
+  position: relative;
 
-  
+
   & li {
     display: grid;
     place-content: center;
+    position: relative;
   }
+  
 
   & a {
     align-items: center;
@@ -62,47 +74,69 @@ a {
     padding-top: 2rem;
     padding-bottom: .5rem;
     transition: color ease-in 300ms;
-  }
-
-  & a:hover {
-    color: #fff
-  } 
-
-  & a:hover .nav__text {
-    width: 100%;
-  }
   
-  & a:hover .nav__text span {
-    transform: translateX(0px)
-  }
+    // Link hover style
+    &:hover {
+      color: #fff
+    } 
 
-  & a.active {
-    border-bottom: 3px solid white;
-    color: white;
-  }
-
-  & .nav__text {
-    border: 1px solid red;
-    display: block;
-    overflow: hidden;
-    transition: width ease-in 300ms;
-    width: 0%;
-    
-    & span {
-      display: block;
-      padding-left: 2px;
-      transform: translateX(-60px);
-      transition: transform ease-in 300ms;
+  
+    // Active Link (circle indicator
+    &::before{
+      content: "";
+      background: white;
+      border-radius: 5rem;
+      bottom: 5px;
+      opacity: 0;
+      position: absolute;
+      top: 70px;
+      transform: translateX(-3px);
+      transition: opacity ease 300ms; 
+      width: 5px;
     }
-  }
 
+    &.active::before {
+      opacity: 1;
+    }
+
+
+    &.active {
+      color: white;
+    }
+
+    & .nav__text {
+      margin-left: 5px;
+    }
+
+    &.active .nav__text {
+      display: block;
+      overflow: hidden;
+      transition: width ease 300ms;
+      width: 0%;
+      
+      & span {
+        display: block;
+        transform: translateX(-60px);
+        transition: transform ease 300ms;
+      }
+    }
+
+    &:hover .nav__text {
+      width: 100%;
+    }
+    
+    &:hover .nav__text span {
+      transform: translateX(0px)
+    }
+
+  }
 
 
 }
 
 
 /* Utilities */ 
-%w-90 {
+w-90 {
   width: 90%;
 }
 
