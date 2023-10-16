@@ -51,6 +51,7 @@ a {
 
 /*  Components */
 
+// tab
 .tab {
   display: flex;
   justify-content: space-around;
@@ -62,6 +63,8 @@ a {
     display: grid;
     place-content: center;
     position: relative;
+    padding-top: 2rem;
+    padding-bottom: .5rem;
   }
   
 
@@ -71,8 +74,6 @@ a {
     display: flex;
     justify-content: center;
     padding-inline: 1rem;
-    padding-top: 2rem;
-    padding-bottom: .5rem;
     transition: color ease-in 300ms;
   
     // Link hover style
@@ -105,7 +106,7 @@ a {
     }
 
     & .nav__text {
-      margin-left: 5px;
+      margin-left: 8px;
     }
 
     &.active .nav__text {
@@ -121,11 +122,11 @@ a {
       }
     }
 
-    &:hover .nav__text {
+    & .nav__text {
       width: 100%;
     }
     
-    &:hover .nav__text span {
+    & .nav__text span {
       transform: translateX(0px)
     }
 
