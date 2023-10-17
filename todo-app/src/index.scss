@@ -78,9 +78,18 @@ a {
   
     // Link hover style
     &:hover {
+      color: #fff;
+    }
+
+    &:active {
+      outline: none;
+    }
+    
+    &:focus {
+      outline: 2px solid #ffffff80;
+      outline-offset: 10px;
       color: #fff
     } 
-
   
     // Active Link (circle indicator
     &::before{
@@ -137,7 +146,7 @@ a {
 
 
 /* Utilities */ 
-w-90 {
+.w-90 {
   width: 90%;
 }
 

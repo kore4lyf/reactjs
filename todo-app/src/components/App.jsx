@@ -3,32 +3,27 @@ import {
   BrowserRouter as Router, 
   Routes, 
   Route } from 'react-router-dom'
-import TodoForm from './TodoForm.jsx'
-import GoalForm from './GoalForm.jsx'
 import Nav from './Nav.jsx'
+import TaskList from './TaskList.jsx'
 
 
 
 function App() {
 
   return (
-    <main>
-      <header>
-        <Nav/>
-      </header>
-      <TodoForm /> 
-      <div>
-
-      </div>
-
-      <br/>
-
-      <GoalForm /> 
-      <div>
-
-      </div>
-
-    </main>
+    <Router>
+      <main>
+        <header>
+          <Nav/>
+        </header>
+        
+        <Routes>
+          <Route exact path='/' element={<TaskList/>}/>
+          <Route exact path='/todo' element={<TaskList/>}/>
+          <Route exact path="/goal" element={<TaskList/>} />          
+        </Routes>
+      </main>
+    </Router>
   )
 }
 

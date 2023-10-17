@@ -1,6 +1,10 @@
 import React from 'react'
 import  { FontAwesomeIcon as FA } from '@fortawesome/react-fontawesome' 
-import { faListAlt, faCalendarCheck } from '@fortawesome/free-regular-svg-icons' 
+import { 
+  faListAlt, 
+  faCalendarCheck 
+} from '@fortawesome/free-regular-svg-icons' 
+import { NavLink } from 'react-router-dom'
 
 
 const Nav = () => {
@@ -8,18 +12,20 @@ const Nav = () => {
     <nav>
       <ul className="tab">
         <li>
-          <a className="active nav__title todo" href="#"> <FA icon={faListAlt}/>  
+          <NavLink activeclassname="active" to="/todo" className="nav__title todo"> 
+            <FA icon={faListAlt}/>  
             <span class="nav__text">
               <span>Todo</span> 
             </span>
-          </a>
+          </NavLink>
         </li>
         <li>
-          <a className="nav__title goal" href="#"> <FA icon={faCalendarCheck} /> 
+          <NavLink activeclassname="active" to="/goal" className="nav__title goal" href="#"> 
+            <FA icon={faCalendarCheck} /> 
             <span class="nav__text">
               <span>Goal</span>
             </span>
-          </a>
+          </NavLink>
         </li>
       </ul>
     </nav>
