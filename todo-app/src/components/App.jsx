@@ -4,7 +4,8 @@ import {
   Routes, 
   Route } from 'react-router-dom'
 import Nav from './Nav.jsx'
-import TaskList from './TaskList.jsx'
+import TodoList from './TodoList.jsx'
+import GoalList from './GoalList.jsx'
 
 
 
@@ -18,9 +19,9 @@ function App() {
         </header>
         
         <Routes>
-          <Route exact path='/' element={<TaskList/>}/>
-          <Route exact path='/todo' element={<TaskList/>}/>
-          <Route exact path="/goal" element={<TaskList/>} />          
+          <Route exact path='/' element={<GoalList/>}/>
+          <Route exact path='/todo' element={<TodoList/>}/>
+          <Route exact path="/goal" element={<GoalList/>} />          
         </Routes>
       </main>
     </Router>

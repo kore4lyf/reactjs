@@ -18,10 +18,16 @@ $bg-overlay: linear-gradient(to bottom, $dark-slate, transparent);
 }
 
 
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0px;
   background: $gradient-bg;
-  min-height: 100vh;
+  //min-height: 100vh;
   color: white;
 
   &::before{
@@ -86,9 +92,7 @@ a {
     }
     
     &:focus {
-      outline: 2px solid #ffffff80;
-      outline-offset: 10px;
-      color: #fff
+      outline: none;
     } 
   
     // Active Link (circle indicator
@@ -101,7 +105,6 @@ a {
       position: absolute;
       top: 70px;
       transform: translateX(-3px);
-      transition: opacity ease 300ms; 
       width: 5px;
     }
 
@@ -116,27 +119,27 @@ a {
 
     & .nav__text {
       margin-left: 8px;
+      transition: width ease 300ms;
+      width: 100%;
+      
+      & span {
+        transition: transform ease 300ms;
+      }
     }
-
+    
     &.active .nav__text {
       display: block;
       overflow: hidden;
-      transition: width ease 300ms;
       width: 0%;
       
       & span {
         display: block;
         transform: translateX(-60px);
-        transition: transform ease 300ms;
       }
     }
 
-    & .nav__text {
-      width: 100%;
-    }
-    
     & .nav__text span {
-      transform: translateX(0px)
+      transform: translateX(0px);
     }
 
   }
