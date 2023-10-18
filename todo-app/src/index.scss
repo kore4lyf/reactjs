@@ -27,7 +27,6 @@ $bg-overlay: linear-gradient(to bottom, $dark-slate, transparent);
 body {
   margin: 0px;
   background: $gradient-bg;
-  //min-height: 100vh;
   color: white;
 
   &::before{
@@ -47,6 +46,10 @@ a {
   text-decoration: none;
 }
 
+nav {
+ position: relative;
+}
+
 
 /* Typography */ 
 .nav__title {
@@ -58,18 +61,38 @@ a {
 /*  Components */
 
 // tab
-.tab {
+nav ul {
   display: flex;
   justify-content: space-around;
   list-style-type: none;
   position: relative;
+  padding-left: 0px;
 
+  &::before {
+    content: "";
+    background: $light-green;
+    border-radius: 2rem;
+    bottom: -5px;
+    height: 5px;
+    position: absolute;
+    right: 50%; 
+    left: 0;
+    transition: all ease-in 400ms;
+
+  }
+
+  &.switch-to-goal::before {
+    right: 50%; 
+    left: 0;
+    right: 0; 
+    left: 50%;
+  }
 
   & li {
     display: grid;
     place-content: center;
     position: relative;
-    padding-top: 2rem;
+    padding-top: .5rem;
     padding-bottom: .5rem;
   }
   
@@ -87,6 +110,10 @@ a {
       color: #fff;
     }
 
+    &.active .nav__icon {
+      color: $light-green;
+    }
+
     &:active {
       outline: none;
     }
@@ -94,24 +121,6 @@ a {
     &:focus {
       outline: none;
     } 
-  
-    // Active Link (circle indicator
-    &::before{
-      content: "";
-      background: white;
-      border-radius: 5rem;
-      bottom: 5px;
-      opacity: 0;
-      position: absolute;
-      top: 70px;
-      transform: translateX(-3px);
-      width: 5px;
-    }
-
-    &.active::before {
-      opacity: 1;
-    }
-
 
     &.active {
       color: white;
@@ -128,6 +137,7 @@ a {
     }
     
     &.active .nav__text {
+      color: gray;
       display: block;
       overflow: hidden;
       width: 0%;
@@ -143,10 +153,18 @@ a {
     }
 
   }
-
-
 }
 
+.todo__item {
+  align-items: center;
+  background: #FFFFFF20;
+  background: #00000020;
+  background: hsla(222, 47.4%, 11.2%, .5);
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  padding-inline: 1rem;
+}
 
 /* Utilities */ 
 .w-90 {
