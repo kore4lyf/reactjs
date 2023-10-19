@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { 
   Circle,
   CheckCircle,
@@ -11,18 +12,24 @@ const handleCompleted = () => {
 }
 
 
-const TodoItem = () => {
+const TodoItem = ({children}) => {
   return (
     <div className="todo__item">
-      { 
-        false === true ? 
-          <CheckCircle /> : 
-          <Circle />
-      }
-        <p className="todo__name"> Go for shopping </p>
+      <div className="flex-flow-1rem"> 
+        { 
+          false === true ? 
+            <CheckCircle /> : 
+            <Circle />
+        }
+        <p className="todo__name">{children}</p>
+      </div>
       <X />
     </div>
   )
+}
+
+TodoItem.propTypes = {
+  children: PropTypes.String
 }
 
 export default TodoItem

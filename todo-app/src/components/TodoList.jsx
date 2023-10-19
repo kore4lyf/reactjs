@@ -4,7 +4,36 @@ import TodoItem from './TodoItem.jsx'
 const TodoList = () => {
   return (
     <div className="list">
-     <TodoItem/> 
+     <TodoItem> Shut the fucking door!</TodoItem> 
+     <TodoItem> Shut the fucking door!</TodoItem> 
+     <TodoItem> Shut the fucking door!</TodoItem> 
+     <TodoItem> Shut the fucking door!</TodoItem> 
+     <TodoItem> Shut the fucking door!</TodoItem> 
+     <TodoItem> Shut the fucking door!</TodoItem> 
+     <TodoItem> Shut the fucking door!</TodoItem> 
+     <TodoItem> Shut the fucking door!</TodoItem> 
+     <TodoItem> Shut the fucking door!</TodoItem> 
+     <TodoItem> Shut the fucking door!</TodoItem> 
+     <TodoItem> Shut the fucking door!</TodoItem> 
+     <TodoItem> Shut the fucking door!</TodoItem> 
+     <TodoItem> Shut the fucking door!</TodoItem> 
+     <TodoItem> Shut the fucking door!</TodoItem> 
+     <TodoItem> Shut the fucking door!</TodoItem> 
+     <TodoItem> Shut the fucking door!</TodoItem> 
+     <TodoItem> Shut the fucking door!</TodoItem> 
+     <TodoItem> Shut the fucking door!</TodoItem> 
+     <TodoItem> Shut the fucking door!</TodoItem> 
+     <TodoItem> Shut the fucking door!</TodoItem> 
+     <TodoItem> Shut the fucking door!</TodoItem> 
+     <TodoItem> Shut the fucking door!</TodoItem> 
+     <TodoItem> Shut the fucking door!</TodoItem> 
+     <TodoItem> Shut the fucking door!</TodoItem> 
+     <TodoItem> Shut the fucking door!</TodoItem> 
+     <TodoItem> Shut the fucking door!</TodoItem> 
+     <TodoItem> Shut the fucking door!</TodoItem> 
+     <TodoItem> Shut the fucking door!</TodoItem> 
+     <TodoItem> Shut the fucking door!</TodoItem> 
+     <TodoItem> Shut the fucking door!</TodoItem> 
     </div>
   )
 }

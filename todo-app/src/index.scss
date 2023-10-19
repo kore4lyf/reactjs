@@ -2,6 +2,8 @@
 $light-green: rgb(182, 244, 150);
 $dark-green: rgb(51, 139, 147);
 $dark-slate: hsl(222, 47.4%, 11.2%);
+$trans-black: #00000020; 
+$trans-white: #FFFFFF20;
 $gradient-bg: linear-gradient(to right, $dark-green, $light-green);
 $bg-overlay: linear-gradient(to bottom, $dark-slate, transparent);
 
@@ -46,21 +48,26 @@ a {
   text-decoration: none;
 }
 
-nav {
- position: relative;
-}
-
 
 /* Typography */ 
 .nav__title {
   font-size: 1.5rem;
-  color: #ffffff90
+  color: #FFFFFF90
 }
 
 
 /*  Components */
 
 // tab
+
+nav {
+  backdrop-filter: blur(50px);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+}
+
 nav ul {
   display: flex;
   justify-content: space-around;
@@ -72,7 +79,7 @@ nav ul {
     content: "";
     background: $light-green;
     border-radius: 2rem;
-    bottom: -15px;
+    bottom: -16.1px;
     height: 5px;
     position: absolute;
     right: 50%; 
@@ -153,18 +160,38 @@ nav ul {
 
 .todo__item {
   align-items: center;
-  background: #FFFFFF20;
-  background: #00000020;
-  background: hsla(222, 47.4%, 11.2%, .5);
+  border-bottom: 2px solid transparent;
   display: flex;
   gap: 1rem;
   justify-content: space-between;
   padding-inline: 1rem;
+
+
+  &:hover {
+    border-bottom: 2px solid white;
+  }
 }
+
+.todo__sub__item {
+  background: hsla(222, 47.4%, 11.2%, .5);
+}
+
+.todo__page {
+  background: $trans-black;
+  margin-top: 88px;
+}
+
+
 
 /* Utilities */ 
 .w-90 {
   width: 90%;
+}
+
+.flex-flow-1rem {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 
