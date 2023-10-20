@@ -242,17 +242,24 @@ nav ul {
 }
 
 .todo__checkbox__container {
+  display: grid;
   padding-left: .5rem;
 }
 
 .todo__text {
-  line-clamp: 1rem;;
+  display: -webkit-box;
   overflow: hidden;
-  text-overflow: hidden;
   overflow-wrap: break-word;
   word-wrap: break-word;
   word-break: break-all;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  
+  &:focus {
+    display: block;
+  }
 }
+
 
 
 
@@ -268,6 +275,15 @@ nav ul {
   display: flex;
   align-items: center;
   gap: 1.5rem;
+}
+
+.no-btn {
+  border: 0px;
+  background: transparent;
+}
+
+.show-hidden-text {
+  display: block;
 }
 
 .slide-out {
