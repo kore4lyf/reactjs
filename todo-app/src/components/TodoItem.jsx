@@ -27,15 +27,19 @@ const TodoItem = ({children}) => {
 
   return (
     <div ref={todo} className={`todo__item ${completed === true ? 'completed-todo' : ''}`}>
-      <div className={`flex-flow-1rem ${completed && 'fade-out'}`}> 
-        { 
-          completed === true ? 
-            <CheckSquare onClick={handleCompleted} /> : 
-            <Square onClick={handleCompleted} />
-        }
-        <p className={`todo__name ${completed && 'strike'}`}>{children}</p>
+      <div className={`flex-flow-1rem `}> 
+        <div className={`todo__checkbox__container ${completed && 'fade-out'}`}>
+          { 
+            completed === true ? 
+              <CheckSquare onClick={handleCompleted} size={24}/> : 
+              <Square onClick={handleCompleted} size={24} />
+          }
+        </div>
+        <p className={`todo__text ${completed && 'strike fade-out'}`}>{children}</p>
       </div>
-      <X className={completed && 'fade-out'} onClick={handleRemoveTodo} />
+      <div className="todo__close__container">
+        <X className="todo__close" onClick={handleRemoveTodo} />
+      </div>
     </div>
   )
 }

@@ -59,6 +59,7 @@ a {
 
 
 /*  Components */
+
 .add-todo {
   background: $dark-green;
   border: none;
@@ -194,16 +195,24 @@ nav ul {
     border-bottom: 1px solid white;
     border-top: 1px solid white;
   }
-}
 
-.completed-todo {
-  &:hover {
-    border-bottom: 1px solid $trans-white-90;
-    border-top: 1px solid $trans-white-90;
+  &:hover .todo__close {
+    display: block;
+  }
+
+  &.completed-todo {
+    &:hover {
+      border-bottom: 1px solid $trans-white-90 !important;
+      border-top: 1px solid $trans-white-90 !important;
+
+      & .todo__checkbox__container {
+        opacity: 1; 
+      }
+    }
   }
 }
 
-.todo__sub__item {
+.goal__sub__item {
   background: hsla(222, 47.4%, 11.2%, .5);
 }
 
@@ -219,13 +228,38 @@ nav ul {
 }
 
 
+.todo__close {
+  display: none; 
 
+  &:hover {
+    color: red;
+  }
+}
+
+.todo__close__container {
+  padding-right: 2rem;
+  width: 1rem;
+}
+
+.todo__checkbox__container {
+  padding-left: .5rem;
+}
+
+.todo__text {
+  line-clamp: 1rem;;
+  overflow: hidden;
+  text-overflow: hidden;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-all;
+}
 
 
 
 
 
 /* Utilities */ 
+
 .fade-out {
   opacity: .5;
 }
@@ -238,7 +272,7 @@ nav ul {
 
 .slide-out {
   opacity: 0;
-  transform: translateX(-90vw);
+  transform: translateX(-100vw);
   transition: 
     opacity ease-in 300ms,
     transform ease-in 300ms;

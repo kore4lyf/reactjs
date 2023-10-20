@@ -6,7 +6,7 @@ const TodoList = () => {
     <div className="todo__list">
      <TodoItem> Shut the fucking door!</TodoItem> 
      <TodoItem> Shut the fucking door!</TodoItem> 
-     <TodoItem> Shut the fucking door!</TodoItem> 
+     <TodoItem> Shut the fucking door!  dfkaslfjkalsfjklasjfklajsfkljaklsdfjklas sdfkasjdfklajs dfaksdfjlaks faskfjakl;sdjflaskfjkas fskadfja;lsd fkasfjkj</TodoItem>  
      <TodoItem> Shut the fucking door!</TodoItem> 
      <TodoItem> Shut the fucking door!</TodoItem> 
      <TodoItem> Shut the fucking door!</TodoItem> 
