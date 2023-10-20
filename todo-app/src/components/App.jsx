@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import { 
   BrowserRouter as Router, 
   Routes, 
@@ -9,7 +9,6 @@ import GoalPage from './GoalPage.jsx'
 
 
 function App() {
-const count = useRef(0)
   return (
     <Router>
       <main>

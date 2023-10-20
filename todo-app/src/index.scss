@@ -3,10 +3,8 @@ $light-green: rgb(182, 244, 150);
 $dark-green: rgb(51, 139, 147);
 $dark-slate: hsl(222, 47.4%, 11.2%);
 $trans-black-20: #00000020; 
-// $trans-black-50: #00000050; 
 $trans-black-90: #00000090; 
 $trans-white-20: #FFFFFF20;
-// $trans-white-50: #FFFFFF50;
 $trans-white-90: #FFFFFF90;
 $gradient-bg: linear-gradient(to right, $dark-green, $light-green);
 $bg-overlay: linear-gradient(to bottom, $dark-slate, transparent);
@@ -79,12 +77,6 @@ a {
   }
 }
 
-.completed-todo {
-  &:hover {
-    border-bottom: 1px solid $trans-white-90 !important;
-    border-top: 1px solid $trans-white-90 !important;
-  }
-}
 
 
 
@@ -160,7 +152,6 @@ nav ul {
     } 
 
     & .nav__text {
-      //margin-left: 8px;
       transition: width ease 300ms;
       width: 100%;
       
@@ -190,6 +181,7 @@ nav ul {
 
 .todo__item {
   align-items: center;
+  background: $trans-black-20;
   border-bottom: 1px solid transparent;
   border-top: 1px solid transparent;
   display: flex;
@@ -201,6 +193,13 @@ nav ul {
   &:hover {
     border-bottom: 1px solid white;
     border-top: 1px solid white;
+  }
+}
+
+.completed-todo {
+  &:hover {
+    border-bottom: 1px solid $trans-white-90;
+    border-top: 1px solid $trans-white-90;
   }
 }
 
@@ -216,7 +215,6 @@ nav ul {
 
 .todo__page,
 .goal__page {
-  background: $trans-black-20;
   margin-top: 88px;
 }
 
@@ -236,6 +234,14 @@ nav ul {
   display: flex;
   align-items: center;
   gap: 1.5rem;
+}
+
+.slide-out {
+  opacity: 0;
+  transform: translateX(-90vw);
+  transition: 
+    opacity ease-in 300ms,
+    transform ease-in 300ms;
 }
 
 .strike {

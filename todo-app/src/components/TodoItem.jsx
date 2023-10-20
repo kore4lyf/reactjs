@@ -14,10 +14,10 @@ const TodoItem = ({children}) => {
   const todo = useRef()
 
   const handleRemoveTodo = () => {
-    todo.current.classList.add('pop-out')
+    todo.current.classList.add('slide-out')
     setTimeout(() => {
       todo.current.remove()
-    }, 500)
+    }, 300)
   }
 
 
@@ -26,7 +26,7 @@ const TodoItem = ({children}) => {
   }
 
   return (
-    <div ref={todo} className={`todo__item ${completed && 'completed-todo'}`}>
+    <div ref={todo} className={`todo__item ${completed === true ? 'completed-todo' : ''}`}>
       <div className={`flex-flow-1rem ${completed && 'fade-out'}`}> 
         { 
           completed === true ? 
