@@ -44,7 +44,7 @@ const TodoItem = ({children}) => {
         <p ref={todoText} className={`todo__text ${completed && 'strike fade-out'}`}>{children}</p>
       </div>
       <div className="todo__close__container">
-        <X className="todo__close" onClick={handleRemoveTodo} />
+        <X className="todo__close" onClick={handleRemoveTodo} size={20}/>
       </div>
     </div>
   )
