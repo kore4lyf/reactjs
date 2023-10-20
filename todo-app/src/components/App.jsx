@@ -5,8 +5,7 @@ import {
   Route } from 'react-router-dom'
 import Nav from './Nav.jsx'
 import TodoPage from './TodoPage.jsx'
-import GoalList from './GoalList.jsx'
-
+import GoalPage from './GoalPage.jsx'
 
 
 function App() {
@@ -19,9 +18,9 @@ const count = useRef(0)
         </header>
         
         <Routes>
-          <Route exact path='/' element={<GoalList/>}/>
+          <Route exact path='/' element={<>Home Page</>}/>
           <Route exact path='/todo' element={<TodoPage/>}/>
-          <Route exact path="/goal" element={<GoalList/>} />          
+          <Route exact path="/goal" element={<GoalPage/>} />          
         </Routes>
       </main>
     </Router>
