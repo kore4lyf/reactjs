@@ -10,30 +10,6 @@ const TodoList = () => {
      <TodoItem> Shut the fucking door!</TodoItem> 
      <TodoItem> Shut the fucking door!</TodoItem> 
      <TodoItem> Shut the fucking door!</TodoItem> 
-     <TodoItem> Shut the fucking door!</TodoItem> 
-     <TodoItem> Shut the fucking door!</TodoItem> 
-     <TodoItem> Shut the fucking door!</TodoItem> 
-     <TodoItem> Shut the fucking door!</TodoItem> 
-     <TodoItem> Shut the fucking door!</TodoItem> 
-     <TodoItem> Shut the fucking door!</TodoItem> 
-     <TodoItem> Shut the fucking door!</TodoItem> 
-     <TodoItem> Shut the fucking door!</TodoItem> 
-     <TodoItem> Shut the fucking door!</TodoItem> 
-     <TodoItem> Shut the fucking door!</TodoItem> 
-     <TodoItem> Shut the fucking door!</TodoItem> 
-     <TodoItem> Shut the fucking door!</TodoItem> 
-     <TodoItem> Shut the fucking door!</TodoItem> 
-     <TodoItem> Shut the fucking door!</TodoItem> 
-     <TodoItem> Shut the fucking door!</TodoItem> 
-     <TodoItem> Shut the fucking door!</TodoItem> 
-     <TodoItem> Shut the fucking door!</TodoItem> 
-     <TodoItem> Shut the fucking door!</TodoItem> 
-     <TodoItem> Shut the fucking door!</TodoItem> 
-     <TodoItem> Shut the fucking door!</TodoItem> 
-     <TodoItem> Shut the fucking door!</TodoItem> 
-     <TodoItem> Shut the fucking door!</TodoItem> 
-     <TodoItem> Shut the fucking door!</TodoItem> 
-     <TodoItem> Shut the fucking door!</TodoItem> 
     </div>
   )
 }
