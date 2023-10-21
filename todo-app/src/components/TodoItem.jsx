@@ -14,7 +14,8 @@ const TodoItem = ({children}) => {
   const todo = useRef()
   const todoText = useRef()
 
-  const showHiddenText = () => {
+  const showHiddenText = (e) => {
+    e.preventDefault()
     if(todoText.current.classList.contains('show-hidden-text')) todoText.current.classList.remove('show-hidden-text')
     else todoText.current.classList.add('show-hidden-text')
   }
@@ -32,7 +33,7 @@ const TodoItem = ({children}) => {
   }
 
   return (
-    <div ref={todo} onClick={showHiddenText} className={`todo__item ${completed === true ? 'completed-todo' : ''}`}>
+    <a ref={todo} onClick={showHiddenText} href="#" className={`todo__item ${completed === true ? 'completed-todo' : ''}`}>
       <div className={`flex-flow-1rem`}> 
         <div className="todo__checkbox__container"> 
           <button className={`no-btn ${completed && 'fade-out'}`} onClick={handleCompleted}>
@@ -50,7 +51,7 @@ const TodoItem = ({children}) => {
           <X size={20}/>
         </button>
       </div>
-    </div>
+    </a>
   )
 }
 
