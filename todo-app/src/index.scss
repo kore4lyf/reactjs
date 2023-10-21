@@ -202,10 +202,10 @@ nav ul {
     border-top: 1px solid white;
     color: white;
     outline: none;
-  }
 
-  &:hover .todo__close {
-    display: block;
+    & .todo__close {
+      display: block;
+    }
   }
 
   &.completed-todo {
