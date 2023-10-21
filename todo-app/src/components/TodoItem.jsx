@@ -33,13 +33,15 @@ const TodoItem = ({children}) => {
 
   return (
     <div ref={todo} onClick={showHiddenText} className={`todo__item ${completed === true ? 'completed-todo' : ''}`}>
-      <div className={`flex-flow-1rem `}> 
-        <div className={`todo__checkbox__container ${completed && 'fade-out'}`}>
+      <div className={`flex-flow-1rem`}> 
+        <div className="todo__checkbox__container"> 
+          <button className={`no-btn ${completed && 'fade-out'}`} onClick={handleCompleted}>
           { 
             completed === true ? 
-              <CheckSquare onClick={handleCompleted} size={20}/> : 
-              <Square onClick={handleCompleted} size={20} />
+              <CheckSquare  size={20}/> : 
+              <Square size={20} />
           }
+          </button>
         </div>
         <p ref={todoText} className={`todo__text ${completed && 'strike fade-out'}`}>{children}</p>
       </div>
