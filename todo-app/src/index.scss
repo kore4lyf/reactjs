@@ -264,6 +264,10 @@ nav ul {
       opacity: 1;
     }
   }
+
+  & + .todo__close__container  {
+    
+  }
 }
 
 .todo__text {
@@ -276,6 +280,8 @@ nav ul {
   -webkit-box-orient: vertical;
   
   &:focus {
+    border: none;
+    outline: none;
     display: block;
   }
 }

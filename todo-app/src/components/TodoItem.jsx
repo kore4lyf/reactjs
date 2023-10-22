@@ -14,11 +14,14 @@ const TodoItem = ({children}) => {
   const todo = useRef()
   const todoText = useRef()
 
-  const showHiddenText = (e) => {
-    if(todoText.current.classList.contains('show-hidden-text')) todoText.current.classList.remove('show-hidden-text')
-    else todoText.current.classList.add('show-hidden-text')
-  }
+  const handleShowHiddenText = () => {
+    const todoTextClass = todoText.current.classList
+    const hasClassName = todoTextClass.contains('show-hidden-text')
 
+    if(hasClassName) todoTextClass.remove('show-hidden-text')
+    else todoTextClass.add('show-hidden-text')
+  }
+ 
   const handleRemoveTodo = () => {
     todo.current.classList.add('slide-out')
     setTimeout(() => {
@@ -32,7 +35,8 @@ const TodoItem = ({children}) => {
   }
 
   return (
-    <div ref={todo} onClick={showHiddenText} tabindex="0" className={`todo__item ${completed === true ? 'completed-todo' : ''}`}>
+    <div ref={todo} onClick={handleShowHiddenText} tabIndex="0" className={`todo__item ${completed === true ? 'completed-todo' : ''}`}>
+      
       <div className={`flex-flow-1rem`}> 
         <div className="todo__checkbox__container"> 
           <button className={`no-btn ${completed && 'fade-out'}`} onClick={handleCompleted}>
@@ -43,8 +47,12 @@ const TodoItem = ({children}) => {
           }
           </button>
         </div>
-        <p ref={todoText} className={`todo__text ${completed && 'strike fade-out'}`}>{children}</p>
+        
+        <div>
+          <p contenteditable="true" ref={todoText} className={`todo__text ${completed && 'strike fade-out'}`}>{children}</p>
+        </div>
       </div>
+
       <div className="todo__close__container">
         <button className="no-btn todo__close" onClick={handleRemoveTodo}>
           <X size={20}/>
