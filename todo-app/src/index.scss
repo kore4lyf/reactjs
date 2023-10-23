@@ -1,4 +1,6 @@
 /* Global Style */
+
+// Variable
 $light-green: rgb(182, 244, 150);
 $dark-green: rgb(51, 139, 147);
 $dark-slate: hsl(222, 47.4%, 11.2%);
@@ -7,7 +9,20 @@ $trans-black-90: #00000090;
 $trans-white-20: #FFFFFF20;
 $trans-white-90: #FFFFFF90;
 $gradient-bg: linear-gradient(to right, $dark-green, $light-green);
-$bg-overlay: linear-gradient(to bottom, $dark-slate, transparent);
+$bg-overlay-top: linear-gradient(to bottom, $dark-slate, transparent);
+
+// Mixins 
+
+@mixin item($bg:$dark-green) {
+  align-items: center;
+  background: $bg;
+  color: white;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  padding-inline: 1rem;
+}
+
 
 
 :root {
@@ -35,15 +50,8 @@ $bg-overlay: linear-gradient(to bottom, $dark-slate, transparent);
 
 body {
   margin: 0px;
-  background: $gradient-bg;
+  background: $bg-overlay-top no-repeat, $gradient-bg;
   color: white;
-
-  &::before{
-    content: "";
-    background: $bg-overlay;
-    position: absolute;
-    inset: 0;
-  }
 }
 
 main {
@@ -61,6 +69,12 @@ a {
   font-size: 1.5rem;
   color: #FFFFFF90
 }
+
+
+
+
+
+
 
 
 /*  Components */
@@ -83,6 +97,45 @@ a {
   }
 }
 
+
+// goal 
+.goal__container {
+  position: relative;
+  & .goal__item {
+    @include item;
+    padding-left: 0px;
+    position: relative;
+  }
+
+  & .goal__status {
+    align-items: center;
+    display: flex;
+    padding-right: 50px;
+    position: relative;
+
+    & .status {
+      display: block;
+      background: lightgray;
+      border-top-right-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+      position: absolute;
+      height: 56.8px;
+      left: 0;
+      width: 8px;
+      
+      &.complete {
+        background: $light-green; 
+      }
+    }
+  }
+
+  & .goal__todos {
+    list-style-type: none;
+    padding-left: 0px;
+    margin: 0px;
+  }
+
+}
 
 
 
@@ -185,17 +238,11 @@ nav ul {
   }
 }
 
+
 .todo__item {
-  align-items: center;
-  background: $trans-black-20;
+  @include item($trans-black-20);
   border-bottom: 1px solid transparent;
   border-top: 1px solid transparent;
-  color: white;
-  display: flex;
-  gap: 1rem;
-  justify-content: space-between;
-  padding-inline: 1rem;
-
 
   &:is(:hover, :focus, :active, :visited) {
     border-bottom: 1px solid white;
@@ -218,10 +265,6 @@ nav ul {
       }
     }
   }
-}
-
-.goal__sub__item {
-  background: hsla(222, 47.4%, 11.2%, .5);
 }
 
 .todo__list {

@@ -19,9 +19,9 @@ const GoalList = () => {
       endTime: "timestamp"
     },
     todos:[
-      {id: Date.now(), text: 'Korede'},
-      {id: Date.now(), text: 'Faith'},
-      {id: Date.now(), text: 'Dozie'},
+      {id: Date.now(), complete: true, text: 'Korede'},
+      {id: Date.now(), complete: false, text: 'Faith'},
+      {id: Date.now(), complete: false, text: 'Dozie'},
     ],
   }
 
