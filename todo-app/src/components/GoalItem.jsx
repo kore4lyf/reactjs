@@ -9,12 +9,14 @@ import {
 const GoalItem = ({goal,todos}) => {
   return (
     <div className="goal__container">
-      <div className="goal__item"> 
-        <div className="goal__status">
-          <div className="status"> </div>
-          <Award />
+      <div className="goal__item">
+        <div className="flex-flow"> 
+          <div className="goal__status">
+            <div className="status"> </div>
+            <Award/>
+          </div>
+          <p> { goal.text } </p>
         </div>
-        <p> { goal.text } </p>
         <MoreVertical />
       </div>
 

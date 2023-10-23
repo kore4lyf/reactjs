@@ -101,17 +101,17 @@ a {
 // goal 
 .goal__container {
   position: relative;
+
   & .goal__item {
     @include item;
-    padding-left: 0px;
+    padding-left: 28px;
     position: relative;
   }
 
   & .goal__status {
     align-items: center;
+    color: darken($color: $dark-green, $amount: 15);
     display: flex;
-    padding-right: 50px;
-    position: relative;
 
     & .status {
       display: block;
@@ -122,8 +122,10 @@ a {
       height: 56.8px;
       left: 0;
       width: 8px;
-      
-      &.complete {
+    }
+
+    &.complete {
+      & .status {
         background: $light-green; 
       }
     }
@@ -341,7 +343,7 @@ nav ul {
   opacity: .5;
 }
 
-.flex-flow-1rem {
+.flex-flow {
   display: flex;
   align-items: center;
   gap: 1.5rem;

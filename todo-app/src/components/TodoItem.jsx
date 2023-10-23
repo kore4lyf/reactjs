@@ -37,7 +37,7 @@ const TodoItem = ({text}) => {
   return (
     <div ref={todo} onClick={handleShowHiddenText} tabIndex="0" className={`todo__item ${completed === true ? 'completed-todo' : ''}`}>
       
-      <div className={`flex-flow-1rem`}> 
+      <div className={`flex-flow`}> 
         <div className="todo__checkbox__container"> 
           <button className={`no-btn ${completed && 'fade-out'}`} onClick={handleCompleted}>
           { 

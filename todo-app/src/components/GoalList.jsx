@@ -3,7 +3,7 @@ import GoalItem from './GoalItem.jsx'
 
 const GoalList = () => {
   const goal = {
-    id: Date.now(),
+    id: 1,
     text: 'Climb mountain everest',
     startDate: '11/27/2023',
     endDate: '11/30/2025',
@@ -19,9 +19,9 @@ const GoalList = () => {
       endTime: "timestamp"
     },
     todos:[
-      {id: Date.now(), complete: true, text: 'Korede'},
-      {id: Date.now(), complete: false, text: 'Faith'},
-      {id: Date.now(), complete: false, text: 'Dozie'},
+      {id: 1, complete: true, text: 'Korede'},
+      {id: 2, complete: false, text: 'Faith'},
+      {id: 3, complete: false, text: 'Dozie'},
     ],
   }
 
