@@ -9,7 +9,7 @@ import {
 
 
 
-const TodoItem = ({children}) => {
+const TodoItem = ({text}) => {
   const [completed, setCompleted] = useState(false)
   const todo = useRef()
   const todoText = useRef()
@@ -49,7 +49,9 @@ const TodoItem = ({children}) => {
         </div>
         
         <div>
-          <p contenteditable="true" ref={todoText} className={`todo__text ${completed && 'strike fade-out'}`}>{children}</p>
+          <p contentEditable={!completed && "true"} ref={todoText} 
+            className={`todo__text ${completed && 'strike fade-out'}`}
+            suppressContentEditableWarning="true">{text}</p>
         </div>
       </div>
 
@@ -63,7 +65,7 @@ const TodoItem = ({children}) => {
 }
 
 TodoItem.propTypes = {
-  children: PropTypes.string
+  text: PropTypes.string
 }
 
 export default TodoItem

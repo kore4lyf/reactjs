@@ -1,9 +1,12 @@
 import React from 'react'
 import { Plus } from 'feather-icons-react'
 
+
 const AddTodo = () => {
   return (
-    <button className="add-todo"> <Plus size="32"/> </button>
+    <button className="add-todo" > 
+      <Plus size="30"/> 
+    </button>
   )
 }
 

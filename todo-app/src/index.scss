@@ -271,6 +271,7 @@ nav ul {
 }
 
 .todo__text {
+  caret-color: $light-green;
   display: -webkit-box;
   overflow: hidden;
   overflow-wrap: break-word;
