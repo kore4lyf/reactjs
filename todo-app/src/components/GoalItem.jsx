@@ -14,19 +14,23 @@ const handleShowTodos = (e) => {
   else goalItemClass.add('close')
 }
 
+const handleShowOption = () => {
+
+}
+
 const GoalItem = ({goal,todos}) => {
   return (
     <div className="goal__container">
-      <div className="goal__item close" onClick={(e) => handleShowTodos(e)}>
-        <div className="flex-flow"> 
-          <div className="goal__status">
-            <div className="status"> </div>
-            <Award/>
-          </div>
-          <p> { goal.text } </p>
+      <div className="goal__item flex close" onClick={(e) => handleShowTodos(e)}>
+        <div className="flex"> 
+          <div> <Award/> </div>
+          <p className="goal__text"> { goal.text } </p>
         </div>
 
-        <button className="no-btn goal__option"> 
+        <div className="goal__option">
+
+        </div>
+        <button className="no-btn goal__option" onClick={handleShowOption}> 
           <MoreVertical />
         </button>
       </div>
