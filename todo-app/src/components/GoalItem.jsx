@@ -6,10 +6,18 @@ import {
   Award
 } from 'feather-icons-react'
 
+const handleShowTodos = (e) => {
+  const goalItem = e.target 
+  const goalItemClass = goalItem.classList
+
+  if(goalItemClass.contains('close')) goalItemClass.remove('close')
+  else goalItemClass.add('close')
+}
+
 const GoalItem = ({goal,todos}) => {
   return (
     <div className="goal__container">
-      <div className="goal__item">
+      <div className="goal__item close" onClick={(e) => handleShowTodos(e)}>
         <div className="flex-flow"> 
           <div className="goal__status">
             <div className="status"> </div>
@@ -17,7 +25,10 @@ const GoalItem = ({goal,todos}) => {
           </div>
           <p> { goal.text } </p>
         </div>
-        <MoreVertical />
+
+        <button className="no-btn goal__option"> 
+          <MoreVertical />
+        </button>
       </div>
 
       <ul className="goal__todos">

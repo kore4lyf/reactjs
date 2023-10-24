@@ -49,9 +49,17 @@ $bg-overlay-top: linear-gradient(to bottom, $dark-slate, transparent);
 }
 
 body {
-  margin: 0px;
-  background: $bg-overlay-top no-repeat, $gradient-bg;
+  background: $gradient-bg;
   color: white;
+  margin: 0px;
+
+  &::before {
+    content: "";
+    background: $bg-overlay-top;
+    position: absolute;
+    inset: 0;
+    z-index: -10;
+  }
 }
 
 main {
@@ -86,8 +94,8 @@ a {
   bottom: 40px;
   color: white;
   display: grid;
-  place-content: center;
   padding: 1rem;
+  place-content: center;
   position: fixed;
   right: 40px;
   
@@ -101,17 +109,32 @@ a {
 // goal 
 .goal__container {
   position: relative;
+  overflow: hidden;
 
   & .goal__item {
     @include item;
     padding-left: 28px;
     position: relative;
+
+    &.close + .goal__todos  {
+      //opacity: 0;
+      transform: translateY(-100%);
+    }
+
+    &::before {
+      background: transparent;
+      content: "";
+      position: absolute;
+      inset: 0;
+    }
+
   }
+
 
   & .goal__status {
     align-items: center;
     color: darken($color: $dark-green, $amount: 15);
-    display: flex;
+    display: flex;  
 
     & .status {
       display: block;
@@ -131,10 +154,22 @@ a {
     }
   }
 
+
+  & .goal__option {
+    position: relative;
+    z-index: 3;
+  }
+
   & .goal__todos {
     list-style-type: none;
+    overflow: hidden;
     padding-left: 0px;
+    position: relative;
     margin: 0px;
+    transition: 
+      transform ease 500ms,
+      opacity ease 500ms;
+    z-index: -1;
   }
 
 }
@@ -245,6 +280,7 @@ nav ul {
   @include item($trans-black-20);
   border-bottom: 1px solid transparent;
   border-top: 1px solid transparent;
+  overflow: hidden;
 
   &:is(:hover, :focus, :active, :visited) {
     border-bottom: 1px solid white;
@@ -269,7 +305,8 @@ nav ul {
   }
 }
 
-.todo__list {
+.todo__list,
+.goal__todos {
   & .todo__item:first-of-type {
     border-top: 1px solid transparent;
   }
@@ -277,7 +314,7 @@ nav ul {
 
 .todo__page,
 .goal__page {
-  margin-top: 88px;
+  margin-top: 88.49px;
 }
 
 
@@ -308,10 +345,6 @@ nav ul {
       color: $light-green;
       opacity: 1;
     }
-  }
-
-  & + .todo__close__container  {
-    
   }
 }
 
