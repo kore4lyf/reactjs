@@ -196,13 +196,12 @@ nav ul {
     content: "";
     background: $light-green;
     border-radius: 2rem;
-    bottom: -16.1px;
+    bottom: -16.5px;
     height: 5px;
     position: absolute;
     right: 50%; 
     left: 0;
     transition: all ease-out 350ms;
-
   }
 
   &.switch-to-goal::before {
@@ -314,7 +313,7 @@ nav ul {
 
 .todo__page,
 .goal__page {
-  margin-top: 88.49px;
+  margin-top: 88.5px;
 }
 
 

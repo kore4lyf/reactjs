@@ -30,13 +30,14 @@ const GoalItem = ({goal,todos}) => {
           <MoreVertical />
         </button>
       </div>
-
-      <ul className="goal__todos">
-        {todos.map( (todo) => (
-          <li key={todo.id}> 
-            <TodoItem  text={todo.text} /> 
-          </li>))}
-      </ul>
+      <div className="goal__todo__container"> 
+        <ul className="goal__todos">
+          {todos.map( (todo) => (
+            <li key={todo.id}> 
+             <TodoItem  text={todo.text} /> 
+            </li>))}
+        </ul>
+      </div>
     </div>
   )
 }
