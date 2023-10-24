@@ -115,9 +115,9 @@ a {
     @include item;
     padding-left: 28px;
     position: relative;
+    z-index: 2;
 
     &.close + .goal__todos  {
-      //opacity: 0;
       transform: translateY(-100%);
     }
 
@@ -162,14 +162,11 @@ a {
 
   & .goal__todos {
     list-style-type: none;
-    overflow: hidden;
     padding-left: 0px;
     position: relative;
     margin: 0px;
-    transition: 
-      transform ease 500ms,
-      opacity ease 500ms;
-    z-index: -1;
+    transition: transform ease 500ms;
+    z-index: 1;
   }
 
 }
