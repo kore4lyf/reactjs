@@ -161,10 +161,7 @@ a {
   }
 
   & .goal__todos {
-    list-style-type: none;
-    padding-left: 0px;
     position: relative;
-    margin: 0px;
     transition: transform ease 500ms;
     z-index: 1;
   }
@@ -303,7 +300,11 @@ nav ul {
 
 .todo__list,
 .goal__todos {
-  & .todo__item:first-of-type {
+  list-style-type: none;
+  padding-left: 0px;
+  margin: 0px;
+
+  & li:first-of-type .todo__item {
     border-top: 1px solid transparent;
   }
 }

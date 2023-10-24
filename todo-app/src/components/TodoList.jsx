@@ -5,14 +5,14 @@ import TodoItem from './TodoItem.jsx'
 
 const TodoList = () => {
   return (
-    <div className="todo__list">
-     <TodoItem text={'Shut the fucking door!'} />
-     <TodoItem text={'Shut the fucking door!'} /> 
-     <TodoItem text={'Shut the fucking door!'} /> 
-     <TodoItem text={'Shut the fucking door!'} /> 
-     <TodoItem text={'Shut the fucking door!'} /> 
-     <TodoItem text={'Shut the fucking door!'} /> 
-    </div>
+    <ul className="todo__list">
+      <li> <TodoItem text={'Shut the fucking door!'} /> </li>
+      <li> <TodoItem text={'Shut the fucking door!'} /> </li>
+      <li> <TodoItem text={'Shut the fucking door!'} /> </li>
+      <li> <TodoItem text={'Shut the fucking door!'} /> </li>
+      <li> <TodoItem text={'Shut the fucking door!'} /> </li>
+      <li> <TodoItem text={'Shut the fucking door!'} /> </li>
+    </ul>
   )
 }
 
