@@ -6,7 +6,12 @@ import {
 import Nav from './Nav'
 import TodoPage from './TodoPage'
 import GoalPage from './GoalPage'
+import AddEditItem from './AddEditItem'
 
+
+const multiRoute = (element) => {
+  return (...paths) => paths.map( path => <Route key={path} path={path} element={element}/> )
+}
 
 function App() {
   return (
@@ -19,7 +24,8 @@ function App() {
         <Routes>
           <Route exact path='/' element={<>Home Page</>}/>
           <Route exact path='/todo' element={<TodoPage/>}/>
-          <Route exact path="/goal" element={<GoalPage/>} />          
+          <Route exact path='/goal' element={<GoalPage/>} />
+          {multiRoute(<AddEditItem />)('/edit', '/add')}
         </Routes>
       </main>
     </Router>
