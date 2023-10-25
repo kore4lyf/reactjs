@@ -31,10 +31,19 @@ const GoalItem = ({ goal, todos }) => {
           <div> <Award className="goal__item__icon"/> </div>
           <p className="goal__text" ref={goalText}> { goal.text } </p>          
         </div>
-
-        <button className="no-btn goal__option" onClick={handleShowOption}> 
-          <MoreVertical />
-        </button>
+        
+        <div className="goal__option__container">
+          <div className="goal__option">
+            <div className="options"> 
+              <button className="option"> Edit </button>
+              <button className="option delete"> Delete </button>
+            </div>
+            <div className="tooltip"> </div>
+          </div>
+          <button className="no-btn goal__option__btn" onClick={handleShowOption}> 
+            <MoreVertical />
+          </button>
+        </div>
       </div>
 
       <ul className="goal__todos">

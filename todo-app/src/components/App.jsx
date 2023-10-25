@@ -3,9 +3,9 @@ import {
   BrowserRouter as Router, 
   Routes, 
   Route } from 'react-router-dom'
-import Nav from './Nav.jsx'
-import TodoPage from './TodoPage.jsx'
-import GoalPage from './GoalPage.jsx'
+import Nav from './Nav'
+import TodoPage from './TodoPage'
+import GoalPage from './GoalPage'
 
 
 function App() {

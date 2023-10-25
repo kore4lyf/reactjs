@@ -1,5 +1,5 @@
 import React from 'react'
-import GoalItem from './GoalItem.jsx'
+import GoalItem from './GoalItem'
 
 const GoalList = () => {
   const goal = {

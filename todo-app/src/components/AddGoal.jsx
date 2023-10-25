@@ -1,8 +1,12 @@
 import React from 'react'
+import { Plus } from 'feather-icons-react'
+
 
 const AddGoal = () => {
   return (
-    <div>AddGoal</div>
+    <button className="add-goal" > 
+      <Plus size="30"/> 
+    </button>
   )
 }
 
