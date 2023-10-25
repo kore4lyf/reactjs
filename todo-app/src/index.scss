@@ -264,20 +264,6 @@ a {
       right: -15px;
     }
   }
-    
-  & .change-goal {
-    background: white;
-    border: 0px;
-    border-radius: 5px;
-    padding: .6rem;
-    position: relative;
-    
-    &:is(:hover, :focus) {
-      background: lightgray;
-    }
-  }
-
-
 }
 
 
