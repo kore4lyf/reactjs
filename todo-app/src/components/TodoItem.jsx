@@ -26,7 +26,7 @@ const TodoItem = ({text}) => {
     todo.current.classList.add('slide-out')
     setTimeout(() => {
       todo.current.remove()
-    }, 300)
+    }, 500)
   }
 
 

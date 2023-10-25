@@ -33,7 +33,6 @@ $bg-overlay-top: linear-gradient(to bottom, $dark-slate, transparent);
   -webkit-text-size-adjust: 100%;
 }
 
-
 *,
 *::after,
 *::before {
@@ -89,6 +88,7 @@ a {
   border: none;
   border-radius: 1rem;
   bottom: 40px;
+  box-shadow: 5px 8px 10px #00000030;
   color: white;
   display: grid;
   padding: 1rem;
@@ -97,7 +97,9 @@ a {
   right: 40px;
   
   &:is(:hover, :focus) {
-    background: darken($color: $dark-green, $amount: 12);
+    $bg: darken($dark-green, 10);
+    background: $bg;
+    box-shadow: 0px 0px;
     outline: none;
   }
 }
@@ -112,9 +114,7 @@ a {
   & .goal__item {
     @include item;
     border-left: 6px solid lightgray;
-    box-shadow: 5px 0px #00000020;
-    word-break: break-word;
-    text-overflow:ellipsis;
+    box-shadow: 0px 5px 10px #00000020;
     padding-block: 1rem;
     padding-left: 22px;
     position: relative;
@@ -123,9 +123,9 @@ a {
     &.complete {
       border-left-color: $light-green;
     }
-
-    &.close + .goal__todos  {
-      transform: translateY(-100%);
+    
+    &.open + .goal__todos  {
+      max-height: 350px;
     }
 
     &::before {
@@ -134,23 +134,75 @@ a {
       position: absolute;
       inset: 0;
     }
+
+    & .goal__item__icon {
+      color: darken($dark-green, 18); 
+    }
   }
 
   & .goal__option {
     position: relative;
     z-index: 3;
+
+    &:is(:hover, :focus) {
+      color: $light-green;
+    }
   }
 
   & .goal__text {
     margin: 0;
+    width: 100%;
   }
 
   & .goal__todos {
+    max-height: 0px;
+    overflow-y: scroll;
     position: relative;
-    transition: transform ease 500ms;
+    transition: max-height ease 500ms;
     z-index: 1;
+
+    &::-webkit-scrollbar {
+      //display: none;
+      width: 12px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: white;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #00000020;
+    }
+
+    &::-webkit-scrollbar-button {
+      display: none;
+    }
   }
 
+  & .goal__add__todo {
+    display: grid;
+    
+    & .icon {
+      margin-right: .6rem;
+    }
+
+    & button {
+      align-items: center;
+      background: transparent;
+      border: 1px solid white;
+      color: white;
+      font-size: 1rem;
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
+      
+      &:is(:hover, :focus) {
+        background: #FFFFFF50;
+        color: black;
+        outline: none;
+      }
+    }
+  }
 }
 
 
@@ -170,7 +222,7 @@ nav ul {
   justify-content: space-around;
   list-style-type: none;
   position: relative;
-  padding-left: 0px;
+  pladding-left: 0px;
 
   &::before {
     content: "";
@@ -365,7 +417,8 @@ nav ul {
   gap: 1.5rem;
 }
 
-.flex {
+.flex-start {
+  align-items: start;
   display: flex;
   gap: 1.5rem;
 }
@@ -388,8 +441,8 @@ nav ul {
   opacity: 0;
   transform: translateX(-100vw);
   transition: 
-    opacity ease-in 300ms,
-    transform ease-in 300ms;
+    opacity ease-in 500ms,
+    transform ease-in 500ms;
 }
 
 .strike {

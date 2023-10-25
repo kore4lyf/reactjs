@@ -14,7 +14,7 @@ const GoalList = () => {
 
   const goal1 = {
     id: 1,
-    text: 'Be the baddest programmer in the world.',
+    text: 'Be the baddest programmer in the world. Be the baddest programmer in the world. Be the baddest programmer in the world. ',
     startDate: '11/27/2023',
     endDate: '11/30/2025',
     reminder: {
@@ -29,15 +29,16 @@ const GoalList = () => {
       endTime: "timestamp"
     },
     todos:[
-      {id: 3, complete: false, text: 'Dozie'},
-      {id: 3, complete: false, text: 'Dozie'},
-      {id: 3, complete: false, text: 'Dozie'},
-      {id: 3, complete: false, text: 'Dozie'},
-      {id: 3, complete: false, text: 'Dozie'},
-      {id: 3, complete: false, text: 'Dozie'},
+      {id: 0, complete: false, text: 'Dozie'},
       {id: 1, complete: true, text: 'Korede'},
       {id: 2, complete: false, text: 'Faith'},
       {id: 3, complete: false, text: 'Dozie'},
+      {id: 4, complete: false, text: 'Dozie'},
+      {id: 5, complete: false, text: 'Dozie'},
+      {id: 6, complete: false, text: 'Dozie'},
+      {id: 7, complete: false, text: 'Dozie'},
+      {id: 8, complete: false, text: 'Dozie'},
+      {id: 9, complete: false, text: 'Dozie'},
     ]
   }
 
