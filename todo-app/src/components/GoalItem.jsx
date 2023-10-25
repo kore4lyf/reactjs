@@ -44,6 +44,8 @@ const GoalItem = ({ goal, todos }) => {
             <MoreVertical />
           </button>
         </div>
+
+        <button className="change-goal"> Submit </button>
       </div>
 
       <ul className="goal__todos">
