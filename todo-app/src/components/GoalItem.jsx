@@ -15,7 +15,6 @@ const GoalItem = ({ goal, todos }) => {
   const goalOption = useRef() 
 
   const handleShowOption = () => {
-    const goalOptionDisplay = goalOption.current.style.display
     const goalOptionIsVisible = () => goalOption.current.style.display === 'block'
     console.log(goalOption.current.style.display)
 
@@ -23,8 +22,14 @@ const GoalItem = ({ goal, todos }) => {
     else goalOption.current.style.display = 'block'
   }
 
-  const handleEdit = (goalId) => {
+  const handleSaveEdit = () => {
+    goalText.current.style.position = ''
+  }
 
+  const handleEdit = () => {
+    goalText.current.style.position = 'relative'
+    goalText.current.focus()
+    handleShowOption()
   }
 
   const handleDeleteGoal = (goalId) => {
@@ -49,13 +54,15 @@ const GoalItem = ({ goal, todos }) => {
       <div className="goal__item flex-start" onClick={(e) => handleShowTodos(e)}>
         <div className="flex-start"> 
           <div> <Award className="goal__item__icon"/> </div>
-          <p className="goal__text" ref={goalText}> { goal.text } </p>          
+          <p className="goal__text" ref={goalText} contentEditable="true" suppressContentEditableWarning="true"> 
+            { goal.text } 
+          </p>          
         </div>
         
         <div className="goal__option__container">
           <div className="goal__option" ref={goalOption}>
             <div className="options"> 
-              <button className="option flex-flow-0"> <Edit3 size={18}/> Edit </button>
+              <button className="option flex-flow-0" onClick={handleEdit}> <Edit3 size={18}/> Edit </button>
               <button className="option delete flex-flow-0"> <Trash size={18}/> Delete </button>
             </div>
             <div className="tooltip"> </div>
@@ -63,6 +70,7 @@ const GoalItem = ({ goal, todos }) => {
           <button className="no-btn goal__option__btn" onClick={handleShowOption}> 
             <MoreVertical />
           </button>
+          <button className="goal__save"> Save </button>
         </div>
       </div>
 

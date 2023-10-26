@@ -24,6 +24,7 @@ function App() {
           <Nav/>
         </header>
         }
+
         <Routes>
           <Route exact path='/' element={<>Home Page</>}/>
           <Route exact path='/todo' element={<TodoPage/>}/>

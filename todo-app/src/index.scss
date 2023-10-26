@@ -151,7 +151,7 @@ a {
     }
 
     &::before {
-      background: transparent;
+      background:  #00000050; //transparent;
       content: "";
       position: absolute;
       inset: 0;
@@ -237,8 +237,9 @@ a {
             color: red;
           }
 
-          &:hover {
+          &:is(:hover, :focus) {
             background: #f2f2f2;
+            outline: none;
           }
           
           &:first-of-type {
