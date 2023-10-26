@@ -3,7 +3,12 @@ import React from 'react'
 function AddEditItem() {
   return (
     <div className="add-edit-item-page">
-    AddEdit
+      <div className="editor">
+        <h1> Goal </h1> 
+        <p contentEditable="true" suppressContentEditableWarning="true">
+          Korede
+        </p>
+      </div>
     </div>
   )
 }

@@ -2,7 +2,8 @@ import React from 'react'
 import { 
   BrowserRouter as Router, 
   Routes, 
-  Route } from 'react-router-dom'
+  Route 
+} from 'react-router-dom'
 import Nav from './Nav'
 import TodoPage from './TodoPage'
 import GoalPage from './GoalPage'

@@ -48,7 +48,7 @@ const TodoItem = ({text}) => {
           </button>
         </div>
         
-        <div>
+        <div className="grid">
           <p contentEditable={!completed && "true"} ref={todoText} 
             className={`todo__text ${completed && 'strike fade-out'}`}
             suppressContentEditableWarning="true">{text}</p>
