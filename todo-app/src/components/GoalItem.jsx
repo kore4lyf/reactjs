@@ -4,7 +4,9 @@ import TodoItem from './TodoItem'
 import { 
   Award,
   MoreVertical,
-  Plus
+  Plus,
+  Trash,
+  Edit3
 } from 'feather-icons-react'
 
 
@@ -52,8 +54,8 @@ const GoalItem = ({ goal, todos }) => {
         <div className="goal__option__container">
           <div className="goal__option" ref={goalOption}>
             <div className="options"> 
-              <button className="option"> Edit </button>
-              <button className="option delete"> Delete </button>
+              <button className="option flex-flow-0"> <Edit3 size={18}/> Edit </button>
+              <button className="option delete flex-flow-0"> <Trash size={18}/> Delete </button>
             </div>
             <div className="tooltip"> </div>
           </div>
