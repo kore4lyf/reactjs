@@ -212,8 +212,9 @@ a {
 
     & .goal__option {
       bottom: -22px;
-      right: 40px;
+      display: none;
       position: absolute;
+      right: 30px;
       z-index: 5;
       
       & .options {

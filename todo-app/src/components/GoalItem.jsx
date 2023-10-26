@@ -8,12 +8,29 @@ import {
 } from 'feather-icons-react'
 
 
-const handleShowOption = () => {
-
-}
-
 const GoalItem = ({ goal, todos }) => {
   const goalText = useRef() 
+  const goalOption = useRef() 
+
+  const handleShowOption = () => {
+    const goalOptionDisplay = goalOption.current.style.display
+    const goalOptionIsVisible = () => goalOptionDisplay !== 'none'
+
+    if (goalOptionIsVisible()) goalOption.current.style.display = 'none'
+    else goalOption.current.style.display = 'block'
+  }
+
+  const handleEdit = (goalId) => {
+
+  }
+
+  const handleDeleteGoal = (goalId) => {
+
+  }
+
+  const handleDeleteTodo = (goalId, todoId) => {
+
+  }
 
   const handleShowTodos = (e) => {
     const goalItem = e.target 
@@ -33,7 +50,7 @@ const GoalItem = ({ goal, todos }) => {
         </div>
         
         <div className="goal__option__container">
-          <div className="goal__option">
+          <div className="goal__option" ref={goalOption}>
             <div className="options"> 
               <button className="option"> Edit </button>
               <button className="option delete"> Delete </button>
