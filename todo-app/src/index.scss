@@ -24,6 +24,7 @@ $bg-overlay-top: linear-gradient(to bottom, $dark-slate, transparent);
 
 
 :root {
+  cursor: $light-green;
   line-height: 1.5;
   font-weight: 400;
   font-synthesis: none;
@@ -67,6 +68,11 @@ main {
 
 a {
   text-decoration: none;
+}
+
+button {
+  font-family: 'Inter';
+  font-weight: 500;
 }
 
 
@@ -151,7 +157,7 @@ a {
     }
 
     &::before {
-      background:  #00000050; //transparent;
+      background: transparent;
       content: "";
       position: absolute;
       inset: 0;
@@ -164,9 +170,24 @@ a {
 
   & .goal__option__btn {
     position: relative;
+    display: none;
     z-index: 3;
 
     &:is(:hover, :focus) {
+      color: $light-green;
+    }
+  }
+
+  .goal__save {
+    //display: none;
+    border: 1px solid $light-green;//transparent;
+    border-radius: .5rem;
+    background: transparent;
+    color: white;
+    font-size: 1rem;
+    padding: .3rem;
+    
+    &:is(:focus, :hover) {
       color: $light-green;
     }
   }
@@ -252,8 +273,9 @@ a {
             border-bottom-left-radius: 5px;
             border-bottom: 0px;
           }
-        }
+        } 
       }
+
     }
 
     

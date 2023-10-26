@@ -13,6 +13,8 @@ import {
 const GoalItem = ({ goal, todos }) => {
   const goalText = useRef() 
   const goalOption = useRef() 
+  const optionButton = useRef()
+  const saveButton = useRef() 
 
   const handleShowOption = () => {
     const goalOptionIsVisible = () => goalOption.current.style.display === 'block'
@@ -23,11 +25,17 @@ const GoalItem = ({ goal, todos }) => {
   }
 
   const handleSaveEdit = () => {
+    saveButton.current.style.display = 'none'
+    optionButton.current.style.display = 'block'
     goalText.current.style.position = ''
+    goalText.current.setAttribute('tabindex', '-1')
   }
 
   const handleEdit = () => {
+    saveButton.current.style.display = 'block'
+    optionButton.current.style.display = 'none'
     goalText.current.style.position = 'relative'
+    goalText.current.setAttribute('tabindex', '0')
     goalText.current.focus()
     handleShowOption()
   }
@@ -54,7 +62,7 @@ const GoalItem = ({ goal, todos }) => {
       <div className="goal__item flex-start" onClick={(e) => handleShowTodos(e)}>
         <div className="flex-start"> 
           <div> <Award className="goal__item__icon"/> </div>
-          <p className="goal__text" ref={goalText} contentEditable="true" suppressContentEditableWarning="true"> 
+          <p className="goal__text" ref={goalText} contentEditable="true" suppressContentEditableWarning="true" tabIndex="-1"> 
             { goal.text } 
           </p>          
         </div>
@@ -67,10 +75,10 @@ const GoalItem = ({ goal, todos }) => {
             </div>
             <div className="tooltip"> </div>
           </div>
-          <button className="no-btn goal__option__btn" onClick={handleShowOption}> 
+          <button className="no-btn goal__option__btn" ref={optionButton} onClick={handleShowOption}> 
             <MoreVertical />
           </button>
-          <button className="goal__save"> Save </button>
+          <button className="goal__save" ref={saveButton} onClick={handleSaveEdit}> Save </button>
         </div>
       </div>
 
