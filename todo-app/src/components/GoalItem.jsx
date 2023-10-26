@@ -16,7 +16,8 @@ const GoalItem = ({ goal, todos }) => {
 
   const handleShowOption = () => {
     const goalOptionDisplay = goalOption.current.style.display
-    const goalOptionIsVisible = () => goalOptionDisplay !== 'none'
+    const goalOptionIsVisible = () => goalOption.current.style.display === 'block'
+    console.log(goalOption.current.style.display)
 
     if (goalOptionIsVisible()) goalOption.current.style.display = 'none'
     else goalOption.current.style.display = 'block'
@@ -71,7 +72,7 @@ const GoalItem = ({ goal, todos }) => {
             <TodoItem  text={todo.text} /> 
           </li>))}
         <li className="goal__add__todo">
-          <button> <Plus className="icon"/> </button>
+          <button className="flex-flow-0"> <Plus className="icon"/>  <span>Add Todo</span> </button>
         </li>
       </ul>
     </div>

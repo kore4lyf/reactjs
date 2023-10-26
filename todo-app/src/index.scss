@@ -138,9 +138,10 @@ a {
   //margin-bottom: 10px;
 
   & .goal__item {
-    $goal-bg: linear-gradient(to right, $dark-green, darken($dark-green, 12)); 
+    //$goal-bg: linear-gradient(to right, $dark-green, darken($dark-green, 12)); 
+    $goal-bg: transparentize($dark-slate, .5);
     @include item($goal-bg);
-    border-bottom: 2px solid darken($dark-green, 18); 
+    border-bottom: 2px solid $light-green;//darken($dark-green, 18);
     box-shadow: 0px 5px 10px #00000020;
     font-family: 'LexendDeca';
     padding-block: 1rem;
@@ -165,7 +166,7 @@ a {
     }
 
     & .goal__item__icon {
-      color: darken($dark-green, 18); 
+      color: lightgray;//$light-green;//darken($dark-green, 18); 
     }
   }
 
@@ -199,22 +200,21 @@ a {
   & .goal__add__todo {
     display: grid;
     
-    & .icon {
-      margin-right: .6rem;
-    }
-
     & button {
       align-items: center;
       background: transparent;
-      border: 1px solid white;
+      border-top: 1px solid transparent;
+      border-bottom: 1px solid transparent;
       color: white;
       font-size: 1rem;
       display: flex;
       justify-content: center;
-      padding: 1rem;
+      padding: .8rem;
       
       &:is(:hover, :focus) {
         background: #FFFFFF50;
+        border-top: 1px solid white;
+        border-bottom: 1px solid white;
         color: white;
         outline: none;
       }
@@ -272,8 +272,6 @@ a {
       border-bottom: 10px solid transparent;
       border-left: 6px solid white;
       border-right: 10px solid transparent;
-      //border-top-width: 0px;
-      //border-bottom-width: 10px;
       position: absolute;
       top: 13px;
       right: -15px;
@@ -475,7 +473,6 @@ nav ul {
     display: block;
   }
 }
-
 
 
 
