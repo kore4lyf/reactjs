@@ -24,8 +24,7 @@ $bg-overlay-top: linear-gradient(to bottom, $dark-slate, transparent);
 @mixin editableText() {
   caret-color: $light-green;
   min-width: 50vw;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
+  text-justify:newspaper;
   word-break: break-all;
 
   &:focus {
@@ -267,6 +266,7 @@ button {
         
         & .option {
           background: white;
+          font-size: .9rem;
           border: 0;
           border-bottom: 1px solid lightgray;
           padding: .8rem;

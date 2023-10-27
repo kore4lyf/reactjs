@@ -8,6 +8,7 @@ import Nav from './Nav'
 import TodoPage from './TodoPage'
 import GoalPage from './GoalPage'
 import PageNotFound from './PageNotFound'
+import Modal from './Modal'
 
 
 //const multiRoute = (element) => {
@@ -31,6 +32,7 @@ function App() {
           <Route exact path='/goal' element={<GoalPage/>} />
           <Route path='*' element={<PageNotFound/>} />
         </Routes>
+        <Modal/>
       </main>
   )
 }
