@@ -21,10 +21,45 @@ $bg-overlay-top: linear-gradient(to bottom, $dark-slate, transparent);
   padding-inline: 1rem;
 }
 
+@mixin editableText() {
+  caret-color: $light-green;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-all;
+
+  &:focus {
+    border-radius: .3rem;
+    border: 1px solid gray;
+    outline: none;
+    display: block;
+  }
+}
+
+%floating-btn {
+  background: $dark-green;
+  border: none;
+  border-radius: 1rem;
+  bottom: 40px;
+  box-shadow: 5px 8px 10px #00000030;
+  color: white;
+  display: grid;
+  padding: 1rem;
+  place-content: center;
+  position: fixed;
+  right: 40px;
+  z-index: 20;
+
+
+  &:is(:hover, :focus) {
+    $bg: darken($dark-green, 10);
+    background: $bg;
+    box-shadow: 0px 0px;
+    outline: none;
+  }
+}
 
 
 :root {
-  cursor: $light-green;
   line-height: 1.5;
   font-weight: 400;
   font-synthesis: none;
@@ -107,25 +142,7 @@ button {
 
 .add-todo,
 .add-goal {
-  background: $dark-green;
-  border: none;
-  border-radius: 1rem;
-  bottom: 40px;
-  box-shadow: 5px 8px 10px #00000030;
-  color: white;
-  display: grid;
-  padding: 1rem;
-  place-content: center;
-  position: fixed;
-  right: 40px;
-  z-index: 20;
-  
-  &:is(:hover, :focus) {
-    $bg: darken($dark-green, 10);
-    background: $bg;
-    box-shadow: 0px 0px;
-    outline: none;
-  }
+  @extend %floating-btn; 
 }
 
 
@@ -170,7 +187,6 @@ button {
 
   & .goal__option__btn {
     position: relative;
-    display: none;
     z-index: 3;
 
     &:is(:hover, :focus) {
@@ -179,7 +195,7 @@ button {
   }
 
   .goal__save {
-    //display: none;
+    display: none;
     border: 1px solid $light-green;//transparent;
     border-radius: .5rem;
     background: transparent;
@@ -193,6 +209,7 @@ button {
   }
 
   & .goal__text {
+    @include editableText();
     margin: 0;
     width: 100%;
   }
@@ -468,22 +485,14 @@ nav ul {
   }
 }
 
+
 .todo__text {
-  caret-color: $light-green;
+  @include editableText();
   display: -webkit-box;
   overflow: hidden;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  word-break: break-all;
   -webkit-line-clamp: 1;
   min-width: 50vw;
   -webkit-box-orient: vertical;
-  
-  &:focus {
-    border: none;
-    outline: none;
-    display: block;
-  }
 }
 
 
