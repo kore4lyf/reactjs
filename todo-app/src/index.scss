@@ -9,18 +9,9 @@ $trans-black-90: #00000090;
 $trans-white-20: #FFFFFF20;
 $trans-white-90: #FFFFFF90;
 $gradient-bg: linear-gradient(to right, $dark-green, $light-green);
-$bg-overlay-top: linear-gradient(to bottom, $dark-slate, transparent);
 
 
 // Mixins 
-
-@mixin item($bg) {
-  background: $bg;
-  color: white;
-  justify-content: space-between;
-  padding-inline: 1rem;
-}
-
 @mixin editableText() {
   caret-color: $light-green;
   min-width: 50vw;
@@ -32,6 +23,28 @@ $bg-overlay-top: linear-gradient(to bottom, $dark-slate, transparent);
     border: 1px solid lightgray;
     outline: none;
     display: block;
+  }
+}
+
+@mixin item($bg) {
+  background: $bg;
+  color: white;
+  justify-content: space-between;
+  padding-inline: 1rem;
+}
+
+@mixin overlay(
+  $direction, 
+  $first-clr: $dark-slate, 
+  $second-clr: transparent) {
+  &::before {
+    $bg: linear-gradient(to #{$direction}, #{$first-clr}, #{$second-clr});
+    content: "";
+    background: $bg;
+    height: 100vh;
+    position: fixed;
+    inset: 0;
+    z-index: -10;
   }
 }
 
@@ -86,14 +99,8 @@ body {
   font-family: 'Inter', sans-serif;
   margin: 0px;
 
-  &::before {
-    content: "";
-    background: $bg-overlay-top;
-    height: 100vh;
-    position: fixed;
-    inset: 0;
-    z-index: -10;
-  }
+  @include overlay(bottom)
+
 }
 
 main {
@@ -310,6 +317,78 @@ button {
     }
   }
 }
+
+
+
+.modal__container {
+  background: #00000080;
+  backdrop-filter: blur(2px);
+  display: grid;
+  place-content: center;
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+
+  :has(&) {
+    overflow: hidden;
+  }
+
+  .modal {
+    background: white;
+    background: $dark-slate;
+    border-radius: 1rem;
+    max-width: 80vw;
+    overflow: hidden;
+    text-align: center;
+
+    .modal__title {
+      font-family: 'LexendDeca';
+      font-size: 1.65rem;
+      margin-bottom: 5px;
+      margin-top: 1.5rem;
+      padding-inline: 1.5rem;
+    }
+
+    .modal__text {
+      color: lightgray; 
+      margin-top: 0px;
+      margin-bottom: 1.5rem;
+      padding-inline: 1.5rem;
+    }
+
+    .modal__btns {
+      display: flex;
+
+      .modal__btn {
+        color: white;
+        background: transparent;
+        border: 0px;
+        border-top: 1px solid gray;
+        font-family: 'Inter';
+        font-size: 1rem;
+        padding: 1rem;
+        width: 100%;
+
+        &:first-of-type {
+          color: lightgray;
+
+          &:hover {
+            color: white;
+          }
+        }
+
+        &:last-of-type {
+          border-left: 1px solid gray; 
+          
+          &:hover {
+            color: $light-green;
+          }
+        }
+      }
+    }
+  }
+}
+
 
 
 // tab

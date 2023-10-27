@@ -19,6 +19,7 @@ function App() {
   const location = useLocation().pathname
   const shouldNavShow = ['/todo', '/goal'].includes(location) 
   return (
+    <>
       <main>
       { shouldNavShow &&
         <header>
@@ -32,8 +33,9 @@ function App() {
           <Route exact path='/goal' element={<GoalPage/>} />
           <Route path='*' element={<PageNotFound/>} />
         </Routes>
-        <Modal/>
       </main>
+      <Modal/>
+    </>
   )
 }
 
