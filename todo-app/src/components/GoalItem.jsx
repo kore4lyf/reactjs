@@ -88,7 +88,8 @@ const GoalItem = ({ goal, todos }) => {
             <TodoItem  text={todo.text} /> 
           </li>))}
         <li className="goal__add__todo">
-          <button className="flex-flow-0"> <Plus className="icon"/>  <span>Add Todo</span> </button>
+          <button className="flex-flow-0"> <Plus className="icon"/> <span> Add </span> </button>
+          <div className="space-1rem"> </div>
         </li>
       </ul>
     </div>
