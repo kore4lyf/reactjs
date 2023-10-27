@@ -1,4 +1,5 @@
 import React from 'react'
+import { AlertCircle } from 'feather-icons-react'
 
 function Modal() {
   const handleCancel = () => {
@@ -13,8 +14,8 @@ function Modal() {
     <div className="modal__container">
       <div className="modal">
         <div>
-        <p className="modal__title"> Delete </p>  
-        <p className="modal__text"> Would you like to delete this goal? aksjdfkajsfklja askdfjkasjfla dfkajkfjaks fkasj faksjfklajs dkfjasd fkafjajd</p>
+        <p className="modal__title flex-flow-0"><AlertCircle/> <span>Delete</span> </p>  
+        <p className="modal__text"> Would you like to delete this goal? </p>
         </div>
         <div className="flex modal__btns">
           <button className="modal__btn"> Cancel </button>

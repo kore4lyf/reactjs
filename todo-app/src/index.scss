@@ -339,24 +339,23 @@ button {
     border-radius: 1rem;
     max-width: 80vw;
     overflow: hidden;
-    text-align: center;
 
-    .modal__title {
+    &__title {
       font-family: 'LexendDeca';
-      font-size: 1.65rem;
-      margin-bottom: 5px;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
       margin-top: 1.5rem;
       padding-inline: 1.5rem;
     }
 
-    .modal__text {
+    &__text {
       color: lightgray; 
       margin-top: 0px;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
       padding-inline: 1.5rem;
     }
 
-    .modal__btns {
+    &__btns {
       display: flex;
 
       .modal__btn {
@@ -386,6 +385,12 @@ button {
         }
       }
     }
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .modal {
+    max-width: 320px !important;
   }
 }
 
