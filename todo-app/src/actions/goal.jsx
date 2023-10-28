@@ -4,6 +4,7 @@ export const DELETE_GOAL = 'DELETE_GOAL'
 export const ADD_GOAL_TODO = 'ADD_GOAL_TODO'
 export const UPDATE_GOAL_TODO = 'UPDATE_GOAL_TODO'
 export const DELETE_GOAL_TODO = 'DELETE_GOAL_TODO'
+export const RECEIVE_GOALS = 'RECEIVE_GOALS'
 
 // Add goal
 function addGoal(goal) {
@@ -46,6 +47,21 @@ function deleteGoal(goalId) {
 export function handleDeleteGoal(goalId) {
 	return (dispatch) => {
 		return dispatch(goalId)			
+	}
+}
+
+
+// Recieve Goals 
+function recieveGoals = (goals) {
+	return {
+		type: RECEIVE_TODOS,
+		goals
+	}
+}
+
+function handleRecieveGoals = (goals) {
+	return (dispatch) => {
+		return dispatch(goals)
 	}
 }
 
@@ -96,3 +112,5 @@ function handleDeleteGoalTodo(todoId) {
 		return dispatch(deleteGoalTodo(todoId))
 	}
 }
+
+

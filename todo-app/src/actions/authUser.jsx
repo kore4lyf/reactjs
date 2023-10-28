@@ -2,6 +2,7 @@ export const LOGIN = 'LOGIN'
 export const LOGOUT = 'LOGOUT'
 
 
+// Login 
 function login(userDetails) {
 	return {
 		type: LOGIN,
@@ -15,3 +16,15 @@ export function handleLogin() {
 	}
 }
 
+// Logout 
+function logout() {
+	return {
+		type: LOGOUT
+	}
+}
+
+export function handleLogout() {
+	return (dispatch) => {
+		return dispatch(logout())
+	}
+}

@@ -1,6 +1,7 @@
 export const ADD_TODO = 'ADD_TODO'
 export const UPDATE_TODO = 'UPDATE_TODO'
-export const DELETE_TODO = 'DELETE_TODO' 
+export const DELETE_TODO = 'DELETE_TODO'
+export const RECIEVE_TODOS = 'RECIEVE_TODOS'
 
 // Add Todo 
 function addTodo(todoItem) {
@@ -44,6 +45,20 @@ function deleteTodo(todoId) {
 export function handleDeleteTodo(todoId) {
 	return (dispatch) => {
 		return dispatch(updateTodo(todoId))
+	}
+}
+
+// Recieve Todo 
+function recieveTodos(todos) {
+	return {
+		type: RECEIVE_TODOS, 
+		todos
+	}
+}
+
+export handleRecieveTodos(todos) {
+	return (dispatch) => {
+		return dispatch(recieveTodos(todos))
 	}
 }
 
