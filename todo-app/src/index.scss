@@ -239,7 +239,7 @@ button {
       background: $trans-black-20;
       display: flex;
       flex-direction: column;
-      align-items: flex-end;
+      align-items: flex-start;
 
     & button {
       background: transparent;
@@ -247,7 +247,7 @@ button {
       color: white;
       font-size: 1rem;
       padding-block: 1rem;
-      padding-right: 1.5rem;
+      margin-left: 1.5rem;
       justify-content: center;
       
       &:is(:hover, :focus) {
@@ -323,15 +323,15 @@ button {
 .modal__container {
   background: #00000080;
   backdrop-filter: blur(2px);
-  display: grid;
+  display: none;//grid;
   place-content: center;
   position: absolute;
   inset: 0;
   z-index: 50;
 
-  :has(&) {
-    overflow: hidden;
-  }
+  //:has(&) {
+    //overflow: hidden;
+  //}
 
   .modal {
     background: white;
