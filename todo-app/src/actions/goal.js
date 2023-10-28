@@ -4,7 +4,7 @@ export const DELETE_GOAL = 'DELETE_GOAL'
 export const ADD_GOAL_TODO = 'ADD_GOAL_TODO'
 export const UPDATE_GOAL_TODO = 'UPDATE_GOAL_TODO'
 export const DELETE_GOAL_TODO = 'DELETE_GOAL_TODO'
-export const RECEIVE_GOALS = 'RECEIVE_GOALS'
+export const RECIEVE_GOALS = 'RECEIVE_GOALS'
 
 // Add goal
 function addGoal(goal) {
@@ -22,16 +22,17 @@ export function handleAddGoal(goal) {
 }
 
 // Update Goal 
-function updateGoal(goal) {
+function updateGoal(id, goal) {
 	return {
-		type: UPDATE_TODO,
+		type: UPDATE_GOAL,
+		id,
 		goal
-	{
+	}
 }
 
-export function handleUpdateGoal(goal) {
+export function handleUpdateGoal(id, goal) {
 	return (dispatch) => {
-		return dispatch(update(goal))
+		return dispatch(updateGoal(id,goal))
 	}
 }
 
@@ -46,22 +47,22 @@ function deleteGoal(goalId) {
 
 export function handleDeleteGoal(goalId) {
 	return (dispatch) => {
-		return dispatch(goalId)			
+		return dispatch(deleteGoal(goalId))
 	}
 }
 
 
 // Recieve Goals 
-function recieveGoals = (goals) {
+function recieveGoals(goals) {
 	return {
-		type: RECEIVE_TODOS,
+		type: RECIEVE_GOALS,
 		goals
 	}
 }
 
-function handleRecieveGoals = (goals) {
+export function handleRecieveGoals(goals) {
 	return (dispatch) => {
-		return dispatch(goals)
+		return dispatch(recieveGoals(goals))
 	}
 }
 
@@ -75,7 +76,7 @@ function addGoalTodo(todo) {
 }
 
 
-function handleAddGoalTodo(todo) {
+export function handleAddGoalTodo(todo) {
 	return (dispatch) => {
 		return dispatch(addGoalTodo(todo))
 	}
@@ -83,31 +84,32 @@ function handleAddGoalTodo(todo) {
 
 
 // Update Goal Todo 
-function updateGoaTodo(todo) {
+function updateGoalTodo(id, todo) {
 	return {
 		type: UPDATE_GOAL_TODO,
+		id,
 		todo
 	}
 }
 
 
-function handleUpdateGoalTodo(todo) {
+export function handleUpdateGoalTodo(id, todo) {
 	return (dispatch) => {
-		return dispatch(updateGoalTodo())
+		return dispatch(updateGoalTodo(id, todo))
 	}
 }
 
 
 // Delete Goal Todo 
 function deleteGoalTodo(todoId) {
-	return (dispatch) => {
+	return {
 		type: DELETE_GOAL_TODO,
 		todoId
 	}
 }
 
 
-function handleDeleteGoalTodo(todoId) {
+export function handleDeleteGoalTodo(todoId) {
 	return (dispatch) => {
 		return dispatch(deleteGoalTodo(todoId))
 	}

@@ -20,43 +20,44 @@ export function handleAddTodo(todoItem) {
 
 
 // Update Todo 
-function updateTodo(todoItem) {
+function updateTodo(id, todo) {
 	return {
 		type: UPDATE_TODO,
-		todoItem
+		id,
+		todo
 	}
 }
 
-export function handleUpdateTodo(todoItem) {
+export function handleUpdateTodo(id, todo) {
 	return (dispatch) => {
-		return dispatch(updateTodo(todoItem))
+		return dispatch(updateTodo(id, todo))
 	}
 }
 
 
 // Delete Todo 
-function deleteTodo(todoId) {
+function deleteTodo(id) {
 	return {
 		type: DELETE_TODO,
-		todoId
+		id
 	}
 }
 
-export function handleDeleteTodo(todoId) {
+export function handleDeleteTodo(id) {
 	return (dispatch) => {
-		return dispatch(updateTodo(todoId))
+		return dispatch(deleteTodo(id))
 	}
 }
 
 // Recieve Todo 
-function recieveTodos(todos) {
+function recieveTodos(id, todos) {
 	return {
-		type: RECEIVE_TODOS, 
+		type: RECIEVE_TODOS, 
 		todos
 	}
 }
 
-export handleRecieveTodos(todos) {
+export function handleRecieveTodos(todos) {
 	return (dispatch) => {
 		return dispatch(recieveTodos(todos))
 	}
