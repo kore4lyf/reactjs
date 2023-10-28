@@ -31,6 +31,10 @@ $gradient-bg: linear-gradient(to right, $dark-green, $light-green);
   color: white;
   justify-content: space-between;
   padding-inline: 1rem;
+  
+  p {
+    border: 1px solid transparent;
+  }
 }
 
 @mixin overlay(
