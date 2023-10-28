@@ -34,16 +34,16 @@ export function handleUpdateTodo(todoItem) {
 
 
 // Delete Todo 
-function deleteTodo(id) {
+function deleteTodo(todoId) {
 	return {
 		type: DELETE_TODO,
-		id
+		todoId
 	}
 }
 
-export function handleDeleteTodo(id) {
+export function handleDeleteTodo(todoId) {
 	return (dispatch) => {
-		return dispatch(updateTodo(todoItem))
+		return dispatch(updateTodo(todoId))
 	}
 }
 
