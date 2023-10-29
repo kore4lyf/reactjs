@@ -16,9 +16,7 @@ export default function todos(state = [], action) {
 
 		case UPDATE_TODO:
 			return state.map((todo) => {
-				if(todo.id === action.id) {
-					return { ...todo, ...action.todo }	
-				} 
+				if(todo.id === action.id) return { ...todo, ...action.todo }	
 				else return todo 
 			})
 

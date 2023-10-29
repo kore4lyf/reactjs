@@ -101,9 +101,10 @@ export function handleUpdateGoalTodo(id, todo) {
 
 
 // Delete Goal Todo 
-function deleteGoalTodo(todoId) {
+function deleteGoalTodo(goalId, todoId) {
 	return {
 		type: DELETE_GOAL_TODO,
+		goalId,
 		todoId
 	}
 }
