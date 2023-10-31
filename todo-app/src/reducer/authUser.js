@@ -1,6 +1,7 @@
 import { 
 	LOGIN,
-	LOGOUT
+	LOGOUT,
+	UPDATE_DETAILS
 } from '../actions/authUser'
 
 export default function authUser(state = {}, action) {
@@ -10,5 +11,11 @@ export default function authUser(state = {}, action) {
 
 		case LOGOUT: 
 			return {}
+
+		case UPDATE_DETAILS: 
+			return {
+				...state,
+				...action.newUserDetails
+			}
 	}
 }

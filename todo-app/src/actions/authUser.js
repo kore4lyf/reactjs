@@ -1,5 +1,6 @@
 export const LOGIN = 'LOGIN'
 export const LOGOUT = 'LOGOUT'
+export const UPDATE_DETAILS = 'UPDATE_DETAILS' 
 
 
 // Login 
@@ -26,5 +27,19 @@ function logout() {
 export function handleLogout() {
 	return (dispatch) => {
 		return dispatch(logout())
+	}
+}
+
+// Update Details 
+function updateDetails(newUserDetails) {
+	return {
+		type: UPDATE_DETAILS, 
+		newUserDetails
+	}
+}
+
+export function handleUpdateDetails(newUserDetails) {
+	return (dispatch) => {
+		dispatch(updateDetails(newUserDetails))
 	}
 }
