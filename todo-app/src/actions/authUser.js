@@ -11,7 +11,7 @@ function login(userDetails) {
 	}
 }
 
-export function handleLogin() {
+export function handleLogin(userDetails) {
 	return (dispatch) => {
 		return dispatch(login(userDetails))	
 	}

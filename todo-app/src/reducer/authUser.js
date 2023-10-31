@@ -15,8 +15,8 @@ export default function authUser(state = {}, action) {
 		case UPDATE_DETAILS: 
 			return {
 				...state,
-				...action.newUserDetails
-			}
+				...action.newUserDetails 
+		}
 
 		default: 
 			return state
