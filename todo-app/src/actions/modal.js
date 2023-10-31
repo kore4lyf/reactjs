@@ -1,5 +1,5 @@
-export OPEN_MODAL = 'OPEN_MODAL'
-export CLOSE_MODAL = 'CLOSE_MODAL' 
+export const OPEN_MODAL = 'OPEN_MODAL'
+export const CLOSE_MODAL = 'CLOSE_MODAL' 
 
 // Open Modal
 function openModal(modalData) {
