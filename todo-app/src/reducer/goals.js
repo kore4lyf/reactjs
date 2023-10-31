@@ -55,5 +55,8 @@ export default function goals(state = [], action) {
 					return {...goal, todos: newTodos}
 				} else return goal
 			})
+
+		default: 
+			return state
 	}
 }

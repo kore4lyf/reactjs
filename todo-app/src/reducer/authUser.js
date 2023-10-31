@@ -17,5 +17,8 @@ export default function authUser(state = {}, action) {
 				...state,
 				...action.newUserDetails
 			}
+
+		default: 
+			return state
 	}
 }

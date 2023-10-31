@@ -25,5 +25,8 @@ export default function todos(state = [], action) {
 
 		case RECIEVE_TODOS:
 			return action.todos
+
+		default: 
+			return state
 	}
 }

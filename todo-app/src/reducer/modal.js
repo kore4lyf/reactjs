@@ -9,7 +9,12 @@ export default function modal(state = {}, action) {
 			return {
 				action.modelData
 			}
+		
 		case CLOSE_MODAL:	
 			return {}
+		
+		default: 
+			return state 
+
 	}
 }
