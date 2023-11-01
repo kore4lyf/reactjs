@@ -1,4 +1,4 @@
-const prebuilLogger = (store) => (next) => (action) => {
+const prebuildLogger = (store) => (next) => (action) => {
 	console.group(action.type)
 	console.log('Action: ', action.type)
 	console.log('Store: ', store.getState())

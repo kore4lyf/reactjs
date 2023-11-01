@@ -4,6 +4,7 @@ import {
   Route,
   useLocation
 } from 'react-router-dom'
+import LoadingBar from 'react-redux-loading-bar'
 import Nav from './Nav'
 import TodoPage from './TodoPage'
 import GoalPage from './GoalPage'
@@ -23,6 +24,7 @@ function App() {
       <main>
       { shouldNavShow &&
         <header>
+          <LoadingBar/>
           <Nav/>
         </header>
         }
@@ -38,5 +40,6 @@ function App() {
     </>
   )
 }
+
 
 export default App

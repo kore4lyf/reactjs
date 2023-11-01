@@ -2,7 +2,7 @@ import {
 	ADD_GOAL,
 	UPDATE_GOAL,
 	DELETE_GOAL,
-	RECIEVE_GOAL,
+	RECIEVE_GOALS,
 	ADD_GOAL_TODO,
 	UPDATE_GOAL_TODO,
 	DELETE_GOAL_TODO
@@ -25,7 +25,7 @@ export default function goals(state = [], action) {
 		case DELETE_GOAL:
 			return state.filter((goal) => goal.id !== action.id)
 
-		case RECIEVE_GOAL:
+		case RECIEVE_GOALS:
 			return action.goals
 
 		case ADD_GOAL_TODO:
