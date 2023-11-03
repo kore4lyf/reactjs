@@ -26,11 +26,10 @@ class Book extends Component {
 
 
   render() {
-  
   const { book, functions } = this.props
   return(
     <div className="book" 
-        onMouseOut={() => this.movetoContainer.classList.add('hide')}>
+        onMouseLeave={() => this.movetoContainer.classList.add('hide')}>
 
       <div className="image-container">
         {book.imageLinks !== undefined ?
@@ -66,7 +65,7 @@ class Book extends Component {
 
 
 Book.propTypes = {
-  books: PropTypes.object.isRequired,
+  book: PropTypes.object.isRequired,
   functions: PropTypes.objectOf(PropTypes.func).isRequired
 }
 

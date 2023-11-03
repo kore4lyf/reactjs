@@ -16,7 +16,6 @@ function Home({currentlyReading, wantToRead, read, functions}) {
       </div>
     </section>
 
-    
     <section className="w-90 mx-auto">
       <div className="sub-header">
         <h2> Want To Read </h2> 

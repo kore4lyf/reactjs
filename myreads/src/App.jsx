@@ -41,18 +41,6 @@ class App extends Component {
     this.searchBooks(text);
   }
 
-  /* showMovetoOptions = (e) => {
-    const movetoOptions = 
-      e.target.closest(".image-container").query(".moveto");
-    console.log(movetoOptions);
-  } */
-
-  /* hideMovetoOptions = (e) => {
-    const movetoOptions = 
-      e.target.closest(".images-cobtainer").query("moveto");
-  } */
-
-
   moveTo = ( book, shelf) => {
     BooksAPI.update(book, shelf).then(() => { 
         if(book.shelf !== shelf) {
@@ -84,6 +72,7 @@ class App extends Component {
 
 
   searchBooks = (query) => {
+      console.log('Searching')
       if (query.length > 0) {
         BooksAPI.search(query).then( 
           books => {
@@ -126,8 +115,7 @@ class App extends Component {
 
     const functions = {
       onSearch: this.handleSearch,
-      moveTo: this.moveTo,
-      showMovetoOptions: this.showMovetoOptions,
+      moveTo: this.moveTo
     }
 
     return (
