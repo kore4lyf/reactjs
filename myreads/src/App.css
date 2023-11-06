@@ -112,6 +112,12 @@ main .header {
   color: white;
 }
 
+main .header a {
+  color: white;
+  text-decoration: none;
+}
+
+
 main .header,
 .sub-header {
   font-family: 'Playfair Display', serif;
