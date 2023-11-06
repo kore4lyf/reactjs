@@ -46,12 +46,41 @@
   transform: translateX(-.3rem);
 }
 
-.book {
+.book{
   border-left: 1px solid lightgray;
   margin-block: .5rem;
   padding-left: 1rem;
   position: relative;
   width: fit-content;
+}
+
+.book-list .book:first-of-type {
+  border-left: 0px;
+}
+
+.skeleton-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 150px);
+  gap: 1rem;
+}
+
+.skeleton {
+  border-left: 1px solid lightgray;
+  margin-block: .5rem;
+  padding-left: 1rem;
+}
+
+.skeleton-container .skeleton:first-of-type {
+  border-left: 0px;
+}
+
+.skeleton-img {
+ height: 180px; 
+}
+
+.skeleton-title {
+ height: 30px; 
+ margin-block: 1rem;
 }
 
 .book .author {
