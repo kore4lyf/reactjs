@@ -1,5 +1,6 @@
-# myreads - Book Management App
-myreads is a user-friendly book management application that simplifies the task of categorizing books into "Read," "Wish," and "Reading" sections. This app offers an intuitive way to keep track of the books you've read, those you wish to read, and the books you're currently reading. Additionally, it provides a book search feature to help you discover and categorize books effortlessly.
+# MyReads - Book Management App 
+[View Live](./https://myreads-0xkore.netlify.app) 
+MyReads is a user-friendly book management application that simplifies the task of categorizing books into "Read," "Wish," and "Reading" sections. This app offers an intuitive way to keep track of the books you've read, those you wish to read, and the books you're currently reading. Additionally, it provides a book search feature to help you discover and categorize books effortlessly.
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -19,7 +20,7 @@ Are you an avid reader or simply looking to stay organized with your reading mat
 - **Simplify Book Management**: A user-friendly interface makes managing your book collection a breeze.
 
 ## Screenshots 
-![Homepage](./)
+![Homepage](./public/desktop-preview.jpg)
 
 ## Features
 - **Book Categorization**: Easily categorize books as "Read," "Wish," or "Reading."
