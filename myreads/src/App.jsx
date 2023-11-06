@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import logo from './logo.png';
 import {Component} from 'react';
 import * as BooksAPI from './BooksAPI';
 import {Routes, Route} from 'react-router-dom';
@@ -59,8 +59,6 @@ class App extends Component {
             );
           }
         }
-
-      //this.hideMovetoOptions(e)
   }).catch(  err => {
         console.log(err);
         this.setState({
