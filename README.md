@@ -29,7 +29,7 @@ Setting up your development environment and commencing your React projects is a 
 ## Project List
 Each project folder will guide you on how to run, develop, and deploy the project. It's your personal canvas for creativity.
 
-1. [MyReads](./myreads): [View Live](./A Organize and manage your book collection with ease. Keep track of what you"re reading, want to read, and have already read. 
+1. [MyReads](./myreads): [View Live](https://myreads-0xkore.netlify.app/) Organize and manage your book collection with ease. Keep track of what you"re reading, want to read, and have already read. 
 
 
 
